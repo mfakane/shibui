@@ -38,6 +38,8 @@ def validate(bundle):
             parser = Links()
             parser.feed(text)
             targets = parser.targets
+        elif path.suffix == ".css":
+            targets = re.findall(r"url\(\s*['\"]?([^'\"\s)]+)['\"]?\s*\)", text)
         elif path.suffix == ".md":
             targets = re.findall(r"\]\(([^\s)]+)\)", text)
             # Skill instructions also use inline code for local file paths.
@@ -62,6 +64,13 @@ def main():
         if errors:
             print("\n".join(errors))
             return 1
+        # A decorative CSS background must also survive installation.
+        hero = installed / "assets/assets/shibui-hero.svg"
+        data = hero.read_bytes()
+        hero.unlink()
+        if not validate(installed):
+            raise AssertionError("Missing CSS background was not detected")
+        hero.write_bytes(data)
         # Prove that a broken bundled dependency is rejected.
         (installed / "assets/css/tokens.css").unlink()
         if not validate(installed):
