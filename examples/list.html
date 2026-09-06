@@ -19,13 +19,13 @@
         <a href="form.html">Form</a>
       </nav>
     </header>
-    <main id="main" class="shell page">
+    <main id="main" class="shell page workspace" tabindex="-1">
       <header class="page-header">
         <p class="eyebrow">Acme workspace</p>
         <div class="split">
           <div>
             <h1>Projects</h1>
-            <p class="lede">Find a project and open its focused view.</p>
+            <p>Find a project and open its focused view.</p>
           </div>
           <a class="button" data-variant="primary" href="#">New project</a>
         </div>
@@ -35,8 +35,8 @@
         <a href="#">Completed 12</a>
         <a href="#">Archived 3</a>
       </nav>
-      <div class="table-wrap">
-        <table>
+      <div class="table-wrap" role="region" aria-label="Projects" tabindex="0">
+        <table class="project-table">
           <thead>
             <tr>
               <th scope="col">Project</th>
@@ -47,9 +47,7 @@
           </thead>
           <tbody>
             <tr>
-              <td>
-                <a href="detail.html"><strong>Atlas</strong></a>
-              </td>
+              <th scope="row"><a href="detail.html">Atlas</a></th>
               <td>
                 <span class="status" data-state="active">In progress</span>
               </td>
@@ -57,25 +55,19 @@
               <td>2 hours ago</td>
             </tr>
             <tr>
-              <td>
-                <a href="#"><strong>Luna</strong></a>
-              </td>
+              <th scope="row"><a href="#">Luna</a></th>
               <td><span class="status">Review</span></td>
               <td>Yuki T.</td>
               <td>5 hours ago</td>
             </tr>
             <tr>
-              <td>
-                <a href="#"><strong>Sol</strong></a>
-              </td>
+              <th scope="row"><a href="#">Sol</a></th>
               <td>Planning</td>
               <td>Mika K.</td>
               <td>Yesterday</td>
             </tr>
             <tr>
-              <td>
-                <a href="#"><strong>Website</strong></a>
-              </td>
+              <th scope="row"><a href="#">Website</a></th>
               <td>
                 <span class="status" data-state="active">In progress</span>
               </td>

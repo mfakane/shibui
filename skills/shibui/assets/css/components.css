@@ -46,8 +46,19 @@
   padding-block: var(--space-7) var(--space-8);
 }
 .page-header {
-  max-width: var(--measure-text);
   margin-block-end: var(--space-7);
+}
+.page-header p:last-child {
+  margin-block-end: 0;
+}
+.split > .button {
+  flex-shrink: 0;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+.project-table {
+  min-width: 36rem;
 }
 .eyebrow {
   margin-block-end: var(--space-3);
@@ -58,6 +69,7 @@
   text-transform: uppercase;
 }
 .lede {
+  max-width: var(--measure-text);
   color: var(--text-muted);
   font-size: 1.125rem;
 }
@@ -143,6 +155,7 @@
   color: var(--text);
 }
 .list-link strong {
+  color: var(--text);
   display: block;
   margin-block-end: var(--space-1);
   font-weight: 600;
@@ -198,12 +211,6 @@
 .facts dd {
   margin: 0;
 }
-.form {
-  max-width: 38rem;
-}
-.field + .field {
-  margin-block-start: var(--space-5);
-}
 .help {
   display: block;
   margin-block-start: var(--space-2);
@@ -213,6 +220,7 @@
 }
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-block-start: var(--space-6);
 }
@@ -280,9 +288,6 @@
   .principle-grid {
     grid-template-columns: 1fr;
   }
-  .table-wrap {
-    overflow-x: auto;
-  }
   .facts {
     grid-template-columns: 1fr;
     gap: var(--space-1);
@@ -297,7 +302,6 @@
   max-width: var(--measure-text);
 }
 .workspace .page-header {
-  max-width: none;
   margin-block-end: var(--space-6);
 }
 .workspace h1 {
@@ -418,34 +422,17 @@ input[aria-invalid="true"] {
 .app-main {
   min-width: 0;
 }
-.app-page-header {
-  margin-block-end: var(--space-7);
-}
-.app-page-header h1 {
-  font-size: 2rem;
-  line-height: 1.2;
-  letter-spacing: -0.03em;
-}
-.app-page-header p {
-  margin-block-end: 0;
-}
-.app-table {
-  overflow-x: auto;
-}
-.app-table table {
-  min-width: 36rem;
-}
-.app-table th,
-.app-table td {
+.project-table th,
+.project-table td {
   padding-block: var(--space-4);
 }
-.app-table th[scope="row"] {
+.project-table th[scope="row"] {
   color: var(--text);
   font-size: 0.875rem;
   text-transform: none;
   letter-spacing: normal;
 }
-.app-table th[scope="row"] a {
+.project-table th[scope="row"] a {
   color: inherit;
 }
 .settings-columns {
@@ -457,7 +444,6 @@ input[aria-invalid="true"] {
 }
 .settings-content {
   min-width: 0;
-  max-width: 38rem;
 }
 .settings-content section {
   scroll-margin-block-start: var(--space-6);
@@ -525,9 +511,6 @@ input[aria-invalid="true"] {
   }
   .app-main {
     padding-block-start: var(--space-5);
-  }
-  .app-page-header {
-    margin-block-end: var(--space-6);
   }
 }
 @media (max-width: 36rem) {

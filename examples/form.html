@@ -19,61 +19,59 @@
         <a aria-current="page" href="form.html">Form</a>
       </nav>
     </header>
-    <main id="main" class="shell page">
+    <main id="main" class="shell page workspace" tabindex="-1">
       <header class="page-header">
         <p><a href="settings.html">← Settings</a></p>
         <p class="eyebrow">General</p>
         <h1>Organization details</h1>
-        <p class="lede">
-          Update the identity shown to members of this workspace.
-        </p>
+        <p>Update the identity shown to members of this workspace.</p>
       </header>
-      <form class="form">
-        <div class="field">
-          <label for="name">
-            Organization name
-            <input id="name" name="name" value="Acme" />
-          </label>
+      <form>
+        <div class="setting-row">
+          <label for="name">Organization name</label>
+          <input id="name" name="name" value="Acme" />
         </div>
-        <div class="field">
-          <label for="website">
-            Website
-            <input
-              id="website"
-              name="website"
-              type="url"
-              value="https://acme.example.com"
-            />
-          </label>
+        <div class="setting-row">
+          <label for="website">Website</label>
+          <input
+            id="website"
+            name="website"
+            type="url"
+            value="https://acme.example.com"
+          />
         </div>
-        <div class="field">
-          <label for="timezone">
-            Timezone
-            <select id="timezone" name="timezone">
+        <div class="setting-row">
+          <label for="timezone">Timezone</label>
+          <div>
+            <select
+              id="timezone"
+              name="timezone"
+              aria-describedby="timezone-help"
+            >
               <option>UTC</option>
               <option>America/Los_Angeles</option>
               <option>Asia/Tokyo</option>
             </select>
-          </label>
-          <span class="help">
-            Used for project dates and notification delivery.
-          </span>
+            <span class="help" id="timezone-help">
+              Used for project dates and notification delivery.
+            </span>
+          </div>
         </div>
         <details class="disclosure">
           <summary>Advanced organization fields</summary>
-          <div class="stack">
-            <label for="legal-name">
-              Legal name
+          <div>
+            <div class="setting-row">
+              <label for="legal-name">Legal name</label>
               <input
                 id="legal-name"
                 name="legal-name"
                 autocomplete="organization"
               />
-            </label>
-            <label for="notes">
-              Internal notes
+            </div>
+            <div class="setting-row">
+              <label for="notes">Internal notes</label>
               <textarea id="notes" name="notes"></textarea>
-            </label>
+            </div>
           </div>
         </details>
         <div class="actions">
@@ -84,7 +82,7 @@
         </div>
       </form>
       <hr class="divider" />
-      <section class="form" aria-labelledby="delete">
+      <section aria-labelledby="delete">
         <h2 id="delete">Delete organization</h2>
         <p>This permanently removes the workspace and its projects.</p>
         <button class="button" data-variant="danger" type="button">

@@ -17,6 +17,8 @@ Establish the primary task, interaction model (page or GUI tool), required simul
 - **ST-04 — Dividers:** Each divider separates regions that remain ambiguous without it. Use role differences to identify meaningful boundaries and task coupling to choose their spacing, not nesting depth or size alone. Different roles do not automatically require a divider or a wide gap.
 - **ST-05 — Visual balance:** Check spacing in the rendered layout: regions should read as distinct, related items should stay grouped, and text and controls should have useful widths. Adjust gaps or reflow columns when whitespace creates crowding, excessive wrapping, or disconnection. Token values are starting points, not universal requirements.
 
+- **ST-06 — Width ownership:** Let task regions use the available shell width. Constrain reading prose or individual controls only where their content calls for it; do not impose an article measure on an entire GUI task. Align actions and separators with the region they affect; a prose measure must not pull a list-level action into the middle of a wider table. Use shared components for the same role across examples. Check both wide and stacked layouts.
+
 ## Visual language — standard profile defaults
 
 - **VI-01 — Effects:** `box-shadow`, `text-shadow`, filter-based shadows, and decorative gradients are absent.

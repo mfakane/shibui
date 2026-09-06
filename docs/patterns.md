@@ -76,3 +76,13 @@ The homepage opts into `data-separators="columns"` on `.principle-grid`. Its 1px
 ### Editing and immediate results
 
 The GUI tool opts into `data-column-divider` on `.workspace-grid`. Project hours and Capacity form one editing/feedback loop: a 1px line clarifies their roles while the existing 3rem gap keeps comparison close. The line belongs to Capacity, follows its height, and is inset 8px at both ends. At 44rem and below, the sections stack with their existing 2rem gap and the vertical line disappears. This treatment is CSS-only; calculation behavior is unchanged.
+
+## Shared page and tool structure
+
+Reading examples use `.shell.page` with a `.reading` article. Task examples use `.shell.page.workspace`, or `.app-main.workspace` inside `.app-shell` when navigation columns are needed. The shell owns the available layout width; `.workspace` changes task typography and header spacing, not content width. All examples use `.page-header`. Do not add a narrow wrapper around an entire task to fix a misplaced action.
+
+Use `.reading` for article line length and `.lede` for introductory reading copy. GUI descriptions use ordinary paragraphs. A header spans the task region, and `.split` aligns its actions with that region's edge before stacking on small screens.
+
+Both project lists use `.table-wrap` for accessible horizontal scrolling and `.project-table` for the same column and row treatment. Both settings forms use `.setting-row` for label/control alignment and responsive stacking. The allocation tool keeps `.allocation-table` because editable numeric cells have different requirements. `.settings-columns` and `.workspace-grid` describe different column roles, not different generations of components.
+
+Settings, Detail, and Form use the available task width without `.page-content` or a form-wide maximum. Ordinary detail sections use headings and whitespace; the destructive form boundary spans its task region. A genuinely constrained input or text block may have a local width chosen for its content, but that must not silently constrain the surrounding header, actions, or other regions.
