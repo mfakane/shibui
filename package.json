@@ -3,7 +3,9 @@
   "private": true,
   "scripts": {
     "format": "prettier --write \"**/*.{html,svg,css,js,json,yaml,yml}\"",
-    "format:check": "prettier --check \"**/*.{html,svg,css,js,json,yaml,yml}\""
+    "format:check": "prettier --check \"**/*.{html,svg,css,js,json,yaml,yml}\"",
+    "skill:sync": "python3 scripts/sync_skill.py",
+    "skill:check": "python3 scripts/sync_skill.py --check"
   },
   "devDependencies": {
     "prettier": "3.9.6"

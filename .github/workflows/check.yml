@@ -20,3 +20,5 @@ jobs:
       - run: npm ci --ignore-scripts
       - run: npm run format:check
       - run: python3 tests/validate.py
+      - run: npm run skill:check
+      - run: python3 tests/validate_skill.py
