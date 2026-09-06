@@ -32,6 +32,25 @@ No build step or frontend dependency is required. Serve the repository with any 
 
 The reference CSS targets current evergreen browsers. It respects reduced-motion preferences and uses native HTML controls wherever possible.
 
+## Source formatting
+
+The HTML and CSS are references for people as well as browsers. Keep them expanded and consistently formatted; avoid committing minified source.
+
+Use Node.js 24 and npm for the development tools:
+
+```sh
+npm ci
+npm run format
+npm run format:check
+python3 tests/validate.py
+```
+
+Prettier is pinned to an exact version with a committed lockfile, following the [Prettier installation guidance](https://prettier.io/docs/install). It formats HTML (including embedded JavaScript), CSS, JSON, and YAML. Markdown prose and Python are outside the formatter's scope. The configuration uses two-space indentation, LF line endings, and an 80-column target. HTML uses `htmlWhitespaceSensitivity: "ignore"` so tags and nested controls remain easy to read, including components whose block or flex layout is defined in CSS. When adding whitespace-sensitive inline content, keep the intended spaces explicit and use a targeted `<!-- prettier-ignore -->` comment if formatting would change the text's spacing.
+
+Editor integrations should use the project's installed Prettier and configuration; `.editorconfig` also supplies basic indentation and line-ending defaults. CI checks formatting and the existing reference validator on pull requests and pushes to `master`.
+
+Node.js is only needed to maintain the source. Viewing or serving the reference pages still requires no build step.
+
 ## License
 
 [CC0 1.0 Universal](LICENSE)
