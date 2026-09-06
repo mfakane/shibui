@@ -17,6 +17,8 @@ Density is task-dependent, not a visual conformity score. Both page and tool exa
 
 `.principle` has no rule by default. Add `data-separator="top"` only where the section boundary is otherwise ambiguous. Ordinary headers and footers remain unruled.
 
+Column spacing uses `--gap-region` (6rem) for distinct menu/content roles and `--gap-peer` (2rem) for comparable items. The editing/results tool retains a 3rem gap because its regions are closely coupled. These are adjustable defaults; choose by role, task coupling, and visual balance, not outer versus inner nesting. See [column patterns](patterns.md#spacing-depends-on-roles-and-visual-balance).
+
 ## Product profiles
 
 To use another profile, declare its name and overrides in the product's design notes, then apply its tokens or CSS after the standard styles. For example, rounded control geometry can be a deliberate product default. Record the reason once rather than treating every instance as an exception. Review visual rules against the selected profile and always review structure and accessibility against the shared principles.

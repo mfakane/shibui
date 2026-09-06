@@ -230,9 +230,10 @@
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
 }
 .principle-grid {
+  --column-gap: var(--gap-peer);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: var(--column-gap);
 }
 .principle {
   padding-block-start: var(--space-4);
@@ -281,9 +282,10 @@
   font-size: clamp(1.75rem, 4vw, 2.5rem);
 }
 .workspace-grid {
+  --column-gap: var(--space-7);
   display: grid;
   grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr);
-  gap: var(--space-7);
+  gap: var(--column-gap);
   align-items: start;
 }
 .workspace-grid > section {
@@ -332,5 +334,234 @@ input[aria-invalid="true"] {
   .workspace-grid {
     grid-template-columns: 1fr;
     gap: var(--space-6);
+  }
+}
+
+/* Column layouts: app navigation + task; settings add a local navigation column. */
+.app-shell {
+  --column-gap: var(--gap-region);
+  width: min(calc(100% - 3rem), 82rem);
+  min-height: 100svh;
+  margin-inline: auto;
+  padding-block: var(--space-7) var(--space-6);
+  display: grid;
+  grid-template-columns: 12rem minmax(0, 1fr);
+  gap: var(--column-gap);
+  align-items: start;
+}
+.app-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+.app-sidebar .brand {
+  display: inline-block;
+  margin-block-end: var(--space-2);
+}
+.app-sidebar p {
+  margin: 0;
+}
+.app-nav,
+.section-nav {
+  display: grid;
+  gap: var(--space-1);
+}
+.app-nav a,
+.section-nav a {
+  display: block;
+  padding: var(--space-3);
+  color: var(--text-muted);
+  text-decoration: none;
+}
+.app-nav a:hover,
+.section-nav a:hover {
+  color: var(--text);
+  background: var(--region);
+}
+.app-nav a[aria-current="page"] {
+  background: var(--selected);
+  color: var(--text);
+  font-weight: 600;
+}
+.app-identity {
+  margin-block-start: var(--space-7);
+  display: grid;
+  gap: var(--space-1);
+  font-size: 0.875rem;
+  overflow-wrap: anywhere;
+}
+.app-identity a {
+  margin-block-start: var(--space-4);
+}
+.app-main {
+  min-width: 0;
+}
+.app-page-header {
+  margin-block-end: var(--space-7);
+}
+.app-page-header h1 {
+  font-size: 2rem;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.app-page-header p {
+  margin-block-end: 0;
+}
+.app-table {
+  overflow-x: auto;
+}
+.app-table table {
+  min-width: 36rem;
+}
+.app-table th,
+.app-table td {
+  padding-block: var(--space-4);
+}
+.app-table th[scope="row"] {
+  color: var(--text);
+  font-size: 0.875rem;
+  text-transform: none;
+  letter-spacing: normal;
+}
+.app-table th[scope="row"] a {
+  color: inherit;
+}
+.settings-columns {
+  --column-gap: var(--gap-region);
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: var(--column-gap);
+  align-items: start;
+}
+.settings-content {
+  min-width: 0;
+  max-width: 38rem;
+}
+.settings-content section {
+  scroll-margin-block-start: var(--space-6);
+}
+.settings-content section + section {
+  margin-block-start: var(--space-7);
+}
+.setting-row {
+  display: grid;
+  grid-template-columns: 10rem minmax(0, 1fr);
+  gap: var(--space-4);
+  align-items: center;
+}
+.setting-row + .setting-row {
+  margin-block-start: var(--space-4);
+}
+.setting-row label,
+.setting-toggle {
+  font-weight: 400;
+}
+.setting-toggle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-4);
+  min-height: 2.75rem;
+  cursor: pointer;
+}
+.setting-toggle input {
+  width: 1.125rem;
+  height: 1.125rem;
+  margin: 0;
+  accent-color: var(--accent);
+}
+/* Reflow local navigation first, then move workspace navigation above the task. */
+@media (max-width: 68rem) {
+  .settings-columns {
+    --column-gap: var(--gap-peer);
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .section-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+@media (max-width: 48rem) {
+  .app-shell {
+    width: min(calc(100% - 2rem), 82rem);
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+    padding-block: var(--space-5) var(--space-6);
+  }
+  .app-sidebar {
+    position: static;
+    min-height: 0;
+    padding-block: 0 var(--space-5);
+    gap: var(--space-4);
+  }
+  .app-nav {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .app-identity {
+    display: none;
+  }
+  .app-main {
+    padding-block-start: var(--space-5);
+  }
+  .app-page-header {
+    margin-block-end: var(--space-6);
+  }
+}
+@media (max-width: 36rem) {
+  .setting-row {
+    grid-template-columns: minmax(0, 1fr);
+    gap: var(--space-2);
+  }
+}
+
+/* Opt-in separators belong to the content column, not the whole page.
+   align-items: start keeps its height independent of the navigation column. */
+[data-column-divider] > :nth-child(2) {
+  position: relative;
+  --column-divider-inset: 8px;
+}
+[data-column-divider] > :nth-child(2)::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(var(--column-gap) / -2);
+  inset-block: var(--column-divider-inset);
+  border-inline-start: 1px solid var(--line);
+  pointer-events: none;
+}
+@media (max-width: 68rem) {
+  .settings-columns[data-column-divider] > :nth-child(2)::before {
+    content: none;
+  }
+}
+@media (max-width: 48rem) {
+  .app-shell[data-column-divider] > :nth-child(2)::before {
+    content: none;
+  }
+}
+
+/* Small peer groups keep their existing gap; separators add no layout width. */
+.principle-grid[data-separators="columns"] > .principle {
+  position: relative;
+}
+.principle-grid[data-separators="columns"]
+  > .principle:not(:nth-child(3n + 1))::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(var(--column-gap) / -2);
+  inset-block: 8px;
+  border-inline-start: 1px solid var(--line);
+  pointer-events: none;
+}
+@media (max-width: 44rem) {
+  .principle-grid[data-separators="columns"]
+    > .principle:not(:nth-child(3n + 1))::before {
+    content: none;
+  }
+}
+
+@media (max-width: 44rem) {
+  .workspace-grid[data-column-divider] > :nth-child(2)::before {
+    content: none;
   }
 }

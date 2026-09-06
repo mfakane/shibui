@@ -16,6 +16,10 @@ information:
   persistent_panels: allowed-when-task-required
   progressive_disclosure:
     required_when_secondary_content_is_large: true
+structure:
+  spacing_basis: [functional-relationship, task-coupling, visual-balance]
+  spacing_review: [grouping, wrapping, usable-content-width, responsive-reflow]
+  nesting_depth_determines_gap: false
 accessibility:
   visible_focus: required
   color_only_meaning: forbidden

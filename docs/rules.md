@@ -11,10 +11,11 @@ Establish the primary task, interaction model (page or GUI tool), required simul
 
 ## Structure
 
-- **ST-01 — Grouping order:** Related content is grouped by spacing and alignment before backgrounds or borders.
+- **ST-01 — Grouping order:** Related content is grouped by spacing and alignment before backgrounds or borders. Choose distance by how closely regions work together. Menu/content boundaries usually need wider spacing, including nested navigation; comparable peers and closely coupled editing/results regions stay nearer.
 - **ST-02 — Semantic containers:** Every visibly drawn container communicates interaction, selection, warning, input, or another named meaning.
 - **ST-03 — Nested surfaces:** No surface is nested inside another surface merely to create hierarchy.
-- **ST-04 — Dividers:** Each divider separates regions that remain ambiguous without it.
+- **ST-04 — Dividers:** Each divider separates regions that remain ambiguous without it. Use role differences to identify meaningful boundaries and task coupling to choose their spacing, not nesting depth or size alone. Different roles do not automatically require a divider or a wide gap.
+- **ST-05 — Visual balance:** Check spacing in the rendered layout: regions should read as distinct, related items should stay grouped, and text and controls should have useful widths. Adjust gaps or reflow columns when whitespace creates crowding, excessive wrapping, or disconnection. Token values are starting points, not universal requirements.
 
 ## Visual language — standard profile defaults
 
