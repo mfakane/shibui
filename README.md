@@ -15,7 +15,35 @@ Shibui is a framework-independent design system for quiet, structured interfaces
 - Use the [review rules](docs/rules.md) and machine-readable [`shibui.yaml`](shibui.yaml) as implementation constraints.
 - Link [`css/tokens.css`](css/tokens.css), [`css/base.css`](css/base.css), and [`css/components.css`](css/components.css), in that order.
 - Open [`index.html`](index.html) to browse eight framework-free reference pages.
-- Give Coding Agents [`skill/SKILL.md`](skill/SKILL.md) for implementation and review workflows.
+- Give Coding Agents [`skills/shibui/SKILL.md`](skills/shibui/SKILL.md) for implementation and review workflows.
+
+## Install the agent skill
+
+Install with either [skills](https://github.com/vercel-labs/skills) or [GitHub CLI](https://cli.github.com/manual/gh_skill_install):
+
+```sh
+npx skills add mfakane/shibui --skill shibui
+gh skill install mfakane/shibui shibui
+```
+
+For Codex at user scope, use `npx skills add mfakane/shibui --skill shibui --agent codex --global` or `gh skill install mfakane/shibui shibui --agent codex --scope user`. Use a GitHub CLI version that provides `gh skill`.
+
+The skill includes principles, review rules, CSS, and runnable examples. Once installed, it needs no network access or source checkout. This installs agent guidance and reference assets; it does not automatically add CSS to your application.
+
+## Maintaining the skill bundle
+
+Edit `skills/shibui/SKILL.md`, `review.md`, and `agents/openai.yaml` directly. The root `docs/`, `css/`, `examples/`, `index.html`, `shibui.yaml`, and `LICENSE` remain the canonical reference sources. The bundle's `references/`, `assets/`, and `LICENSE` are generated; do not edit those copies. Prettier checks canonical sources; synchronization owns the generated copies.
+
+After editing canonical sources, run:
+
+```sh
+npm run format
+npm run skill:sync
+npm run skill:check
+python3 tests/validate_skill.py
+```
+
+Commit the generated files so repository-based installers can copy a complete skill without a build step. CI rejects missing, stale, and unexpected bundle files and validates an isolated copy's local links.
 
 ## Reference pages
 

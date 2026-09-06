@@ -1,2 +1,5 @@
 node_modules/
 package-lock.json
+# Generated from formatted canonical sources by scripts/sync_skill.py.
+skills/shibui/assets/
+skills/shibui/references/

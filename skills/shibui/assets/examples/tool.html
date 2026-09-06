@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Allocation tool — Shibui example</title>
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="shell site-header">
+      <a class="brand" href="../index.html">SHIBUI</a>
+      <nav class="nav" aria-label="Planning examples">
+        <a href="page.html">Planning guide</a>
+        <a href="tool.html" aria-current="page">Allocation tool</a>
+      </nav>
+    </header>
+    <main id="main" class="shell page workspace">
+      <header class="page-header">
+        <h1>Weekly allocation</h1>
+        <p>
+          Adjust project hours and compare the total with available capacity.
+        </p>
+        <p class="meta" id="local-note">
+          Changes stay in this page and are not saved.
+        </p>
+      </header>
+      <noscript>
+        <p>
+          This tool needs JavaScript to calculate totals.
+          <a href="page.html">Read the planning method</a>
+          .
+        </p>
+      </noscript>
+      <form id="allocation" aria-describedby="local-note">
+        <div class="workspace-grid" data-column-divider>
+          <section aria-labelledby="projects-title">
+            <h2 id="projects-title">Project hours</h2>
+            <div
+              class="table-wrap"
+              role="region"
+              aria-label="Project allocations"
+              tabindex="0"
+            >
+              <table class="allocation-table">
+                <caption class="visually-hidden">
+                  Compare and edit hours for all projects
+                </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Project</th>
+                    <th scope="col">Owner</th>
+                    <th scope="col">Hours</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th scope="row">Atlas</th>
+                    <td>Haru K.</td>
+                    <td>
+                      <label class="visually-hidden" for="hours-atlas">
+                        Atlas allocated hours
+                      </label>
+                      <input
+                        id="hours-atlas"
+                        name="atlas"
+                        type="number"
+                        min="0"
+                        max="168"
+                        step="0.5"
+                        value="16"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Luna</th>
+                    <td>Yuki T.</td>
+                    <td>
+                      <label class="visually-hidden" for="hours-luna">
+                        Luna allocated hours
+                      </label>
+                      <input
+                        id="hours-luna"
+                        name="luna"
+                        type="number"
+                        min="0"
+                        max="168"
+                        step="0.5"
+                        value="12"
+                        required
+                      />
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Sol</th>
+                    <td>Mika K.</td>
+                    <td>
+                      <label class="visually-hidden" for="hours-sol">
+                        Sol allocated hours
+                      </label>
+                      <input
+                        id="hours-sol"
+                        name="sol"
+                        type="number"
+                        min="0"
+                        max="168"
+                        step="0.5"
+                        value="8"
+                        required
+                      />
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section aria-labelledby="capacity-title">
+            <h2 id="capacity-title">Capacity</h2>
+            <label for="capacity">Available hours per week</label>
+            <input
+              id="capacity"
+              name="capacity"
+              type="number"
+              min="0"
+              max="168"
+              step="0.5"
+              value="40"
+              required
+            />
+            <div
+              class="capacity-result"
+              role="status"
+              aria-live="polite"
+              aria-atomic="true"
+            >
+              <p>
+                Allocated:
+                <strong id="total">—</strong>
+              </p>
+              <p id="balance">
+                Enable JavaScript to calculate remaining capacity.
+              </p>
+            </div>
+            <p id="allocation-error" class="input-error" hidden>
+              Enter every value from 0 to 168 hours, in half-hour steps.
+            </p>
+          </section>
+        </div>
+        <div class="actions">
+          <button class="button" type="reset">Reset allocations</button>
+        </div>
+      </form>
+      <details class="disclosure">
+        <summary>Calculation notes</summary>
+        <p>
+          Remaining capacity equals available hours minus project hours. All
+          values represent hours in the same week.
+        </p>
+      </details>
+    </main>
+    <footer class="shell footer">
+      Shibui Design System · Project planning
+    </footer>
+    <script>
+      const form = document.querySelector("#allocation");
+      const inputs = [...form.querySelectorAll("input")];
+      const total = document.querySelector("#total");
+      const balance = document.querySelector("#balance");
+      const error = document.querySelector("#allocation-error");
+      function update() {
+        let valid = true;
+        for (const input of inputs) {
+          const invalid = !input.validity.valid;
+          input.setAttribute("aria-invalid", String(invalid));
+          if (invalid)
+            input.setAttribute("aria-describedby", "allocation-error");
+          else input.removeAttribute("aria-describedby");
+          valid = valid && !invalid;
+        }
+        error.hidden = valid;
+        balance.removeAttribute("data-state");
+        if (!valid) {
+          total.textContent = "—";
+          balance.textContent =
+            "Correct the highlighted values to calculate capacity.";
+          return;
+        }
+        const allocated = inputs
+          .filter((input) => input.name !== "capacity")
+          .reduce((sum, input) => sum + input.valueAsNumber, 0);
+        const remaining = form.elements.capacity.valueAsNumber - allocated;
+        total.textContent = `${allocated} h`;
+        balance.textContent =
+          remaining < 0
+            ? `Over capacity by ${Math.abs(remaining)} h`
+            : `${remaining} h remaining`;
+        if (remaining < 0) balance.dataset.state = "over";
+      }
+      form.addEventListener("input", update);
+      form.addEventListener("reset", () => setTimeout(update, 0));
+      form.addEventListener("submit", (event) => event.preventDefault());
+      update();
+    </script>
+  </body>
+</html>

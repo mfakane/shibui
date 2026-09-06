@@ -9,14 +9,14 @@ Build hierarchy through information architecture and structure rather than decor
 
 ## Load references
 
-- Read `../docs/principles.md` before making structural decisions.
-- Read `../docs/style.md` to distinguish standard appearance from shared principles.
-- Read `../docs/rules.md` when reviewing an existing UI or validating an implementation.
-- Read `../docs/patterns.md` when choosing a disclosure, list, detail, or form pattern.
-- Inspect `../shibui.yaml` when machine-readable constraints or automation are useful.
-- Compare relevant files in `../examples/` before introducing a new pattern.
+- Read `references/principles.md` before making structural decisions.
+- Read `references/style.md` to distinguish standard appearance from shared principles.
+- Read `references/rules.md` when reviewing an existing UI or validating an implementation.
+- Read `references/patterns.md` when choosing a disclosure, list, detail, or form pattern.
+- Inspect `references/shibui.yaml` when machine-readable constraints or automation are useful.
+- Compare relevant files in `assets/examples/` before introducing a new pattern.
 
-Resolve all paths relative to this file. If the skill is copied outside this repository, locate the equivalent bundled reference files or apply the workflow below directly.
+Resolve all paths relative to this file. All references and examples are bundled with this skill; no repository checkout or network access is needed. Inspect `assets/css/` for reusable styles and open `assets/index.html` to browse the examples.
 
 ## Implement
 
@@ -39,7 +39,7 @@ Use plain CSS and semantic HTML unless project constraints require a framework. 
 
 1. Identify the intended primary task from the artifact; flag ambiguity rather than inventing certainty.
 2. Review architecture before visual details.
-3. Evaluate applicable rules in `../docs/rules.md` as pass, fail, exception, or not applicable. Separate shared-principle failures from declared style overrides; a visual override is not automatically a structural failure.
+3. Evaluate applicable rules in `references/rules.md` as pass, fail, exception, or not applicable. Separate shared-principle failures from declared style overrides; a visual override is not automatically a structural failure.
 4. For each failure, provide the rule ID, evidence, task impact, and a concrete simpler replacement.
 5. Prioritize restoring required context and removing irrelevant content, then disclosure, structure, typography, backgrounds, and borders.
 6. Preserve necessary affordances and accessibility while simplifying.
@@ -54,5 +54,5 @@ Use `review.md` as the compact checklist and response template.
 - Do not remove visible focus, input boundaries, labels, or error explanations in the name of restraint.
 - Do not replace cards with equally decorative floating panes, gradients, or colored blocks.
 - Do not treat the reference examples as a mandatory application shell; preserve product-specific navigation and workflows.
-- Preserve task-required density and simultaneous context. Compare `../examples/page.html` and `../examples/tool.html`.
+- Preserve task-required density and simultaneous context. Compare `assets/examples/page.html` and `assets/examples/tool.html`.
 - Document product style overrides without weakening shared structure or accessibility principles.

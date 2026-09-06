@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Projects — Shibui columns</title>
+    <link rel="stylesheet" href="../css/tokens.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/components.css" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <!-- The application navigation and current task share the outer grid. -->
+    <div class="app-shell" data-column-divider>
+      <aside class="app-sidebar" aria-label="Workspace">
+        <div>
+          <a class="brand" href="../index.html">Acme</a>
+          <p class="meta">Design workspace</p>
+        </div>
+        <nav class="app-nav" aria-label="Workspace navigation">
+          <a href="columns.html" aria-current="page">Projects</a>
+          <a href="tool.html">Allocation</a>
+          <a href="columns-settings.html">Settings</a>
+        </nav>
+        <div class="app-identity">
+          <strong>Haru K.</strong>
+          <span class="meta">haru@acme.example</span>
+          <a href="../index.html">Shibui examples</a>
+        </div>
+      </aside>
+      <main id="main" class="app-main" tabindex="-1">
+        <header class="app-page-header split">
+          <div>
+            <h1>Projects</h1>
+            <p class="meta">5 projects in this workspace</p>
+          </div>
+          <a class="button" href="tool.html">Plan allocations →</a>
+        </header>
+        <!-- Only the comparison table scrolls when its columns cannot fit. -->
+        <div
+          class="table-wrap app-table"
+          role="region"
+          aria-label="Workspace projects"
+          tabindex="0"
+        >
+          <table>
+            <caption class="visually-hidden">
+              Projects, status, owner, and last update
+            </caption>
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Status</th>
+                <th scope="col">Owner</th>
+                <th scope="col">Updated</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row"><a href="detail.html">Project Atlas</a></th>
+                <td>In progress</td>
+                <td>Haru K.</td>
+                <td>2 hours ago</td>
+              </tr>
+              <tr>
+                <th scope="row">Project Luna</th>
+                <td>Review</td>
+                <td>Yuki T.</td>
+                <td>5 hours ago</td>
+              </tr>
+              <tr>
+                <th scope="row">Project Sol</th>
+                <td>Completed</td>
+                <td>Mika K.</td>
+                <td>1 day ago</td>
+              </tr>
+              <tr>
+                <th scope="row">Internal tools</th>
+                <td>In progress</td>
+                <td>Haru K.</td>
+                <td>2 days ago</td>
+              </tr>
+              <tr>
+                <th scope="row">Website</th>
+                <td>Planning</td>
+                <td>Yuki T.</td>
+                <td>3 days ago</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <footer class="footer">
+          Two columns · Workspace navigation and project list
+        </footer>
+      </main>
+    </div>
+  </body>
+</html>
