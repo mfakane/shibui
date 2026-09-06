@@ -229,6 +229,28 @@
   max-width: 38rem;
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
 }
+/* The illustration is decorative; keep a clear lane for the reading content. */
+.hero--illustrated {
+  background-image: url("../assets/shibui-hero.svg");
+  background-repeat: no-repeat;
+  background-position: right center;
+  background-size: 40% auto;
+}
+.hero--illustrated > * {
+  max-width: 55%;
+}
+.hero--illustrated .lede {
+  max-width: 52%;
+}
+@media (max-width: 48rem) {
+  .hero--illustrated {
+    background-image: none;
+  }
+  .hero--illustrated > *,
+  .hero--illustrated .lede {
+    max-width: 100%;
+  }
+}
 .principle-grid {
   --column-gap: var(--gap-peer);
   display: grid;

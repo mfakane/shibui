@@ -1,0 +1,59 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="440"
+  height="400"
+  viewBox="0 0 440 400"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Structure through space</title>
+  <desc id="desc">
+    An abstract composition of typographic strokes, quiet controls, and inset
+    column dividers. A single green action anchors the open layout.
+  </desc>
+  <!-- Heading and supporting lines: hierarchy without a containing surface. -->
+  <g fill="#172026">
+    <rect x="40" y="48" width="136" height="12" />
+    <rect x="40" y="71" width="94" height="12" />
+  </g>
+  <g fill="#d8ddda">
+    <rect x="40" y="108" width="150" height="3" />
+    <rect x="40" y="120" width="114" height="3" />
+  </g>
+  <!-- One accent, reserved for an action. No shadow or outer frame. -->
+  <rect x="276" y="67" width="120" height="40" fill="#176b5b" />
+  <path d="M 306 87 H 366" stroke="#fdfdfc" stroke-width="3" />
+  <!-- Navigation and content: the separator occupies the shared whitespace. -->
+  <rect x="40" y="174" width="80" height="24" fill="#e9f1ef" />
+  <path d="M 51 186 H 99" stroke="#176b5b" stroke-width="3" />
+  <g stroke="#aab5af" stroke-width="3">
+    <path d="M 51 218 H 89" />
+    <path d="M 51 250 H 101" />
+  </g>
+  <path d="M 164.5 179 V 269" stroke="#d8ddda" />
+  <g fill="#657078">
+    <rect x="208" y="179" width="82" height="6" />
+    <rect x="208" y="218" width="59" height="6" />
+    <rect x="208" y="257" width="71" height="6" />
+  </g>
+  <g fill="none" stroke="#aab5af">
+    <rect x="328.5" y="172.5" width="67" height="21" />
+    <rect x="328.5" y="211.5" width="67" height="21" />
+    <rect x="328.5" y="250.5" width="67" height="21" />
+  </g>
+  <!-- Comparable peers keep a compact rhythm; rules stop short at both ends. -->
+  <g fill="#657078">
+    <rect x="40" y="323" width="44" height="7" />
+    <rect x="168" y="323" width="60" height="7" />
+    <rect x="296" y="323" width="44" height="7" />
+  </g>
+  <g fill="#d8ddda">
+    <rect x="40" y="345" width="84" height="3" />
+    <rect x="40" y="357" width="60" height="3" />
+    <rect x="168" y="345" width="84" height="3" />
+    <rect x="168" y="357" width="68" height="3" />
+    <rect x="296" y="345" width="84" height="3" />
+    <rect x="296" y="357" width="60" height="3" />
+  </g>
+  <path d="M 146.5 325 V 357 M 274.5 325 V 357" stroke="#d8ddda" />
+</svg>

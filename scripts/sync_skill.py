@@ -20,6 +20,7 @@ def expected_files():
                         text = text.replace("`" + prefix, "`../assets/" + prefix)
                     data = text.encode("utf-8")
                 files[f"{target}/{path.relative_to(ROOT / source).as_posix()}"] = data
+    files["assets/assets/shibui-hero.svg"] = (ROOT / "assets/shibui-hero.svg").read_bytes()
     files["references/shibui.yaml"] = (ROOT / "shibui.yaml").read_bytes()
     # Keep the example index's documentation links inside the installed skill.
     files["assets/index.html"] = (ROOT / "index.html").read_text(encoding="utf-8").replace(
