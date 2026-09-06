@@ -50,8 +50,8 @@ The settings example is a live control preview without persistence or a save act
 
 ### Content-length column dividers
 
-Add `data-column-divider` to a two-column group only when the navigation/content boundary needs an explicit separator. Load `js/column-dividers.js` once. A `ResizeObserver` measures the group's two direct children and places a 1px line at the center of their gap. The line spans their shared vertical extent, shortened at each end by `--column-divider-inset` (8px by default). For top-aligned columns, its length is the shorter column's height minus both insets.
+Add `data-column-divider` to a two-column group only when the navigation/content boundary needs an explicit separator. Its second direct child is the content column and owns a `::before` pseudo-element. The 1px line sits at the center of the gap using `--column-gap`, which also controls the grid spacing. Its ends are inset by `--column-divider-inset` (8px by default). No JavaScript or measurement is required.
 
-Keep the columns at their natural height: do not stretch the sidebar to the viewport just to position its identity block. The outer shell supplies 3rem top and 2rem bottom padding (1.5rem top on mobile), so the line cannot cut through the page edges. The sidebar scrolls with the content; this sample does not combine the divider with sticky positioning.
+The line follows the content column's height, even if the navigation column is shorter. Keep `align-items: start` so a taller sidebar does not stretch the content and its separator. For the outer layout, the content column is `.app-main`; for nested settings it is `.settings-content`.
 
-Nested settings columns use the same rule. When columns stack, their vertical separator disappears; no full-width horizontal replacement is added. Content changes, wrapping, and font loading resize the observed regions and update the line. With JavaScript disabled, the divider is omitted and the layout remains usable.
+The outer shell supplies 3rem top and 2rem bottom padding (1.5rem top on mobile), so the line cannot cut through the page edges. The sidebar keeps its natural height and scrolls with the content. When columns stack, their vertical separator disappears; no full-width horizontal replacement is added. Content changes, wrapping, and font loading naturally resize the CSS line along with its content column.

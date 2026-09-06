@@ -337,13 +337,14 @@ input[aria-invalid="true"] {
 
 /* Column layouts: app navigation + task; settings add a local navigation column. */
 .app-shell {
+  --column-gap: var(--space-7);
   width: min(calc(100% - 3rem), 82rem);
   min-height: 100svh;
   margin-inline: auto;
   padding-block: var(--space-7) var(--space-6);
   display: grid;
   grid-template-columns: 12rem minmax(0, 1fr);
-  gap: var(--space-7);
+  gap: var(--column-gap);
   align-items: start;
 }
 .app-sidebar {
@@ -424,9 +425,10 @@ input[aria-invalid="true"] {
   color: inherit;
 }
 .settings-columns {
+  --column-gap: var(--space-6);
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr);
-  gap: var(--space-6);
+  gap: var(--column-gap);
   align-items: start;
 }
 .settings-content {
@@ -510,31 +512,27 @@ input[aria-invalid="true"] {
   }
 }
 
-/* Opt-in boundaries follow the shared height of adjacent content columns.
-   Geometry is supplied by js/column-dividers.js; without it, no line is drawn. */
-[data-column-divider] {
+/* Opt-in separators belong to the content column, not the whole page.
+   align-items: start keeps its height independent of the navigation column. */
+[data-column-divider] > :nth-child(2) {
   position: relative;
   --column-divider-inset: 8px;
 }
-[data-column-divider]::after {
+[data-column-divider] > :nth-child(2)::before {
   content: "";
   position: absolute;
-  left: var(--column-divider-x, 0px);
-  top: calc(var(--column-divider-top, 0px) + var(--column-divider-inset));
-  height: max(
-    0px,
-    calc(var(--column-divider-height, 0px) - 2 * var(--column-divider-inset))
-  );
-  border-left: 1px solid var(--line);
+  inset-inline-start: calc(var(--column-gap) / -2);
+  inset-block: var(--column-divider-inset);
+  border-inline-start: 1px solid var(--line);
   pointer-events: none;
 }
 @media (max-width: 68rem) {
-  .settings-columns[data-column-divider]::after {
+  .settings-columns[data-column-divider] > :nth-child(2)::before {
     content: none;
   }
 }
 @media (max-width: 48rem) {
-  .app-shell[data-column-divider]::after {
+  .app-shell[data-column-divider] > :nth-child(2)::before {
     content: none;
   }
 }

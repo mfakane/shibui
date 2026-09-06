@@ -26,7 +26,7 @@ Shibui is a framework-independent design system for quiet, structured interfaces
 | [Project detail](examples/detail.html) | Understand one project | Expand optional details |
 | [Organization form](examples/form.html) | Update organization details | Reveal advanced fields on demand |
 
-The guide and allocation tool demonstrate the same principles at different task-appropriate densities. The allocation tool updates totals locally; edits are not saved. The column examples use a small script to size optional dividers; their layout and controls also work without it. The remaining reference pages are static layout examples.
+The guide and allocation tool demonstrate the same principles at different task-appropriate densities. The allocation tool updates totals locally; edits are not saved. The column examples use CSS-only dividers that follow the content column height; no JavaScript is required. The remaining reference pages are static layout examples.
 
 No build step or frontend dependency is required. Serve the repository with any static server, for example `python3 -m http.server 8000`.
 
