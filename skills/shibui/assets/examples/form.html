@@ -19,78 +19,84 @@
         <a aria-current="page" href="form.html">Form</a>
       </nav>
     </header>
-    <main id="main" class="shell page">
-      <header class="page-header">
-        <p><a href="settings.html">← Settings</a></p>
-        <p class="eyebrow">General</p>
-        <h1>Organization details</h1>
-        <p class="lede">
-          Update the identity shown to members of this workspace.
-        </p>
-      </header>
-      <form class="form">
-        <div class="field">
-          <label for="name">
-            Organization name
-            <input id="name" name="name" value="Acme" />
-          </label>
-        </div>
-        <div class="field">
-          <label for="website">
-            Website
-            <input
-              id="website"
-              name="website"
-              type="url"
-              value="https://acme.example.com"
-            />
-          </label>
-        </div>
-        <div class="field">
-          <label for="timezone">
-            Timezone
-            <select id="timezone" name="timezone">
-              <option>UTC</option>
-              <option>America/Los_Angeles</option>
-              <option>Asia/Tokyo</option>
-            </select>
-          </label>
-          <span class="help">
-            Used for project dates and notification delivery.
-          </span>
-        </div>
-        <details class="disclosure">
-          <summary>Advanced organization fields</summary>
-          <div class="stack">
-            <label for="legal-name">
-              Legal name
-              <input
-                id="legal-name"
-                name="legal-name"
-                autocomplete="organization"
-              />
-            </label>
-            <label for="notes">
-              Internal notes
-              <textarea id="notes" name="notes"></textarea>
+    <main id="main" class="shell page workspace" tabindex="-1">
+      <div class="page-content">
+        <header class="page-header">
+          <p><a href="settings.html">← Settings</a></p>
+          <p class="eyebrow">General</p>
+          <h1>Organization details</h1>
+          <p class="lede">
+            Update the identity shown to members of this workspace.
+          </p>
+        </header>
+        <form class="form">
+          <div class="field">
+            <label for="name">
+              Organization name
+              <input id="name" name="name" value="Acme" />
             </label>
           </div>
-        </details>
-        <div class="actions">
-          <button class="button" data-variant="primary" type="submit">
-            Save changes
+          <div class="field">
+            <label for="website">
+              Website
+              <input
+                id="website"
+                name="website"
+                type="url"
+                value="https://acme.example.com"
+              />
+            </label>
+          </div>
+          <div class="field">
+            <label for="timezone">
+              Timezone
+              <select
+                id="timezone"
+                name="timezone"
+                aria-describedby="timezone-help"
+              >
+                <option>UTC</option>
+                <option>America/Los_Angeles</option>
+                <option>Asia/Tokyo</option>
+              </select>
+            </label>
+            <span class="help" id="timezone-help">
+              Used for project dates and notification delivery.
+            </span>
+          </div>
+          <details class="disclosure">
+            <summary>Advanced organization fields</summary>
+            <div class="stack">
+              <label for="legal-name">
+                Legal name
+                <input
+                  id="legal-name"
+                  name="legal-name"
+                  autocomplete="organization"
+                />
+              </label>
+              <label for="notes">
+                Internal notes
+                <textarea id="notes" name="notes"></textarea>
+              </label>
+            </div>
+          </details>
+          <div class="actions">
+            <button class="button" data-variant="primary" type="submit">
+              Save changes
+            </button>
+            <a class="button" href="settings.html">Cancel</a>
+          </div>
+        </form>
+        <hr class="divider" />
+        <section class="form" aria-labelledby="delete">
+          <h2 id="delete">Delete organization</h2>
+          <p>This permanently removes the workspace and its projects.</p>
+          <button class="button" data-variant="danger" type="button">
+            Delete organization
           </button>
-          <a class="button" href="settings.html">Cancel</a>
-        </div>
-      </form>
-      <hr class="divider" />
-      <section class="form" aria-labelledby="delete">
-        <h2 id="delete">Delete organization</h2>
-        <p>This permanently removes the workspace and its projects.</p>
-        <button class="button" data-variant="danger" type="button">
-          Delete organization
-        </button>
-      </section>
+        </section>
+      </div>
     </main>
     <footer class="shell footer">Reference pattern: focused form</footer>
   </body>

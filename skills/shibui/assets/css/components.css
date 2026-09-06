@@ -46,8 +46,23 @@
   padding-block: var(--space-7) var(--space-8);
 }
 .page-header {
-  max-width: var(--measure-text);
   margin-block-end: var(--space-7);
+}
+/* Keep focused headings, content, and actions within one useful width. */
+.page-content {
+  max-width: 38rem;
+}
+.page-header p:last-child {
+  margin-block-end: 0;
+}
+.split > .button {
+  flex-shrink: 0;
+}
+.table-wrap {
+  overflow-x: auto;
+}
+.project-table {
+  min-width: 36rem;
 }
 .eyebrow {
   margin-block-end: var(--space-3);
@@ -58,6 +73,7 @@
   text-transform: uppercase;
 }
 .lede {
+  max-width: var(--measure-text);
   color: var(--text-muted);
   font-size: 1.125rem;
 }
@@ -143,6 +159,7 @@
   color: var(--text);
 }
 .list-link strong {
+  color: var(--text);
   display: block;
   margin-block-end: var(--space-1);
   font-weight: 600;
@@ -213,6 +230,7 @@
 }
 .actions {
   display: flex;
+  flex-wrap: wrap;
   gap: var(--space-3);
   margin-block-start: var(--space-6);
 }
@@ -280,9 +298,6 @@
   .principle-grid {
     grid-template-columns: 1fr;
   }
-  .table-wrap {
-    overflow-x: auto;
-  }
   .facts {
     grid-template-columns: 1fr;
     gap: var(--space-1);
@@ -297,7 +312,6 @@
   max-width: var(--measure-text);
 }
 .workspace .page-header {
-  max-width: none;
   margin-block-end: var(--space-6);
 }
 .workspace h1 {

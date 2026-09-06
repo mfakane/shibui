@@ -76,3 +76,11 @@ The homepage opts into `data-separators="columns"` on `.principle-grid`. Its 1px
 ### Editing and immediate results
 
 The GUI tool opts into `data-column-divider` on `.workspace-grid`. Project hours and Capacity form one editing/feedback loop: a 1px line clarifies their roles while the existing 3rem gap keeps comparison close. The line belongs to Capacity, follows its height, and is inset 8px at both ends. At 44rem and below, the sections stack with their existing 2rem gap and the vertical line disappears. This treatment is CSS-only; calculation behavior is unchanged.
+
+## Task headers and focused content widths
+
+A task header spans its content region. Constrain the introductory prose (`.lede`), not `.page-header`, so a list-level action can align with the far edge of its table. `.split` places the action beside the title group and stacks it below on small screens. Keep the action from shrinking into a narrow text column.
+
+The Settings, Projects, Detail, and Form examples use `.workspace` for task-sized headings. Settings, Detail, and Form group their header and body in `.page-content` (38rem maximum), keeping category arrows, edit actions, and destructive boundaries close to the content they belong to. Projects retains the full shell width for comparison, with a named, keyboard-focusable table scroll region on narrow screens. Reading articles retain `.reading` and their reading-oriented typography.
+
+Ordinary detail sections use headings and whitespace. The form retains one explicit boundary before the destructive action, limited to the same width as the form. Disclosure already establishes optional detail; its contents need no background solely to repeat that hierarchy.

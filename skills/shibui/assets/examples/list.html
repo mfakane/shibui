@@ -19,7 +19,7 @@
         <a href="form.html">Form</a>
       </nav>
     </header>
-    <main id="main" class="shell page">
+    <main id="main" class="shell page workspace" tabindex="-1">
       <header class="page-header">
         <p class="eyebrow">Acme workspace</p>
         <div class="split">
@@ -35,8 +35,8 @@
         <a href="#">Completed 12</a>
         <a href="#">Archived 3</a>
       </nav>
-      <div class="table-wrap">
-        <table>
+      <div class="table-wrap" role="region" aria-label="Projects" tabindex="0">
+        <table class="project-table">
           <thead>
             <tr>
               <th scope="col">Project</th>
