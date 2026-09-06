@@ -17,7 +17,7 @@ Density is task-dependent, not a visual conformity score. Both page and tool exa
 
 `.principle` has no rule by default. Add `data-separator="top"` only where the section boundary is otherwise ambiguous. Ordinary headers and footers remain unruled.
 
-Column spacing uses `--gap-region` (6rem) for distinct menu/content roles and `--gap-peer` (2rem) for comparable items. These are adjustable defaults; choose by role and visual balance, not outer versus inner nesting. See [column patterns](patterns.md#spacing-depends-on-roles-and-visual-balance).
+Column spacing uses `--gap-region` (6rem) for distinct menu/content roles and `--gap-peer` (2rem) for comparable items. The editing/results tool retains a 3rem gap because its regions are closely coupled. These are adjustable defaults; choose by role, task coupling, and visual balance, not outer versus inner nesting. See [column patterns](patterns.md#spacing-depends-on-roles-and-visual-balance).
 
 ## Product profiles
 
