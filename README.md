@@ -1,8 +1,12 @@
 # Shibui Design System
 
+![shib[ui] wordmark](assets/shibui-logo.svg)
+
 **Less surface. More structure.**
 
 Shibui is a framework-independent design system for quiet, structured interfaces. It treats information architecture as part of visual design: keep the context needed for the current task available together, reveal secondary detail on demand, and establish hierarchy with space, alignment, and type before adding surfaces or borders.
+
+![Shibui visual reference: typography, buttons, focus, inputs, content-length dividers, and role-dependent spacing](assets/shibui-overview.svg)
 
 ## Start here
 
@@ -47,7 +51,7 @@ npm run format:check
 python3 tests/validate.py
 ```
 
-Prettier is pinned to an exact version with a committed lockfile, following the [Prettier installation guidance](https://prettier.io/docs/install). It formats HTML (including embedded JavaScript), CSS, JavaScript, JSON, and YAML. Markdown prose and Python are outside the formatter's scope. The configuration uses two-space indentation, LF line endings, and an 80-column target. HTML uses `htmlWhitespaceSensitivity: "ignore"` so tags and nested controls remain easy to read, including components whose block or flex layout is defined in CSS. When adding whitespace-sensitive inline content, keep the intended spaces explicit and use a targeted `<!-- prettier-ignore -->` comment if formatting would change the text's spacing.
+Prettier is pinned to an exact version with a committed lockfile, following the [Prettier installation guidance](https://prettier.io/docs/install). It formats HTML (including embedded JavaScript), SVG, CSS, JavaScript, JSON, and YAML. Markdown prose and Python are outside the formatter's scope. The configuration uses two-space indentation, LF line endings, and an 80-column target. HTML uses `htmlWhitespaceSensitivity: "ignore"` so tags and nested controls remain easy to read, including components whose block or flex layout is defined in CSS. When adding whitespace-sensitive inline content, keep the intended spaces explicit and use a targeted `<!-- prettier-ignore -->` comment if formatting would change the text's spacing.
 
 Editor integrations should use the project's installed Prettier and configuration; `.editorconfig` also supplies basic indentation and line-ending defaults. CI checks formatting and the existing reference validator on pull requests and pushes to `master`.
 

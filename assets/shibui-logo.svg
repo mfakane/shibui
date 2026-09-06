@@ -1,0 +1,18 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="232"
+  height="96"
+  viewBox="0 0 232 96"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">shib[ui] — Shibui Design System</title>
+  <desc id="desc">
+    A light sans-serif wordmark with medium-weight ui enclosed in green square
+    brackets.
+  </desc>
+  <rect width="232" height="96" fill="#fdfdfc" />
+  <!-- Keep adjacent glyphs together; whitespace changes the wordmark. -->
+  <!-- prettier-ignore -->
+  <text x="20" y="68" font-family="'Segoe UI', 'Helvetica Neue', 'Nimbus Sans', Arial, sans-serif" font-size="60" font-weight="300" letter-spacing="-1" fill="#172026">shib<tspan fill="#176b5b">[</tspan><tspan font-weight="500">ui</tspan><tspan fill="#176b5b">]</tspan></text>
+</svg>

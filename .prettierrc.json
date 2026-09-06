@@ -3,5 +3,13 @@
   "tabWidth": 2,
   "useTabs": false,
   "endOfLine": "lf",
-  "htmlWhitespaceSensitivity": "ignore"
+  "htmlWhitespaceSensitivity": "ignore",
+  "overrides": [
+    {
+      "files": "*.svg",
+      "options": {
+        "parser": "html"
+      }
+    }
+  ]
 }

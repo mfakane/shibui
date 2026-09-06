@@ -1,0 +1,158 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1000"
+  height="820"
+  viewBox="0 0 1000 820"
+  role="img"
+  aria-labelledby="title desc"
+>
+  <title id="title">Shibui at a glance</title>
+  <desc id="desc">
+    Quiet typography, square primary buttons, text actions, visible focus, and
+    content-length column dividers. Menu and content use a wide gap; editing and
+    results stay closer. One green accent and restrained semantic surfaces.
+  </desc>
+  <style>
+    text {
+      font-family: Inter, "Segoe UI", Arial, sans-serif;
+      fill: #172026;
+    }
+    .label {
+      font-size: 12px;
+      letter-spacing: 1.4px;
+      fill: #657078;
+    }
+    .muted {
+      font-size: 15px;
+      fill: #657078;
+    }
+    .body {
+      font-size: 16px;
+    }
+    .heading {
+      font-size: 23px;
+      font-weight: 600;
+    }
+    .action {
+      font-size: 16px;
+      font-weight: 600;
+      fill: #176b5b;
+    }
+    .line {
+      stroke: #d8ddda;
+      stroke-width: 1;
+    }
+  </style>
+  <rect width="1000" height="820" fill="#fdfdfc" />
+  <!-- Hierarchy is carried by type and space, without a header rule. -->
+  <text x="48" y="54" class="label">
+    SHIBUI DESIGN SYSTEM / VISUAL REFERENCE
+  </text>
+  <text x="48" y="108" font-size="38" font-weight="600">
+    Less surface. More structure.
+  </text>
+  <text x="48" y="142" class="muted">
+    Space establishes relationships. Lines clarify boundaries. Content leads.
+  </text>
+  <!-- Peer specimens: compact spacing, inset separators, no cards. -->
+  <g aria-label="Typography">
+    <text x="48" y="208" class="label">01 / TYPE</text>
+    <text x="48" y="251" font-size="30" font-weight="600">A clear purpose</text>
+    <text x="48" y="286" class="heading">A useful heading</text>
+    <text x="48" y="317" class="body">Body text stays calm.</text>
+    <text x="48" y="346" class="muted">Hierarchy through type and space.</text>
+  </g>
+  <path d="M 357.5 204 V 352" class="line" />
+  <g aria-label="Actions">
+    <text x="382" y="208" class="label">02 / ACTIONS</text>
+    <rect x="382" y="233" width="106" height="44" fill="#172026" />
+    <text
+      x="435"
+      y="261"
+      text-anchor="middle"
+      style="fill: #fdfdfc; font-size: 16px; font-weight: 600"
+    >
+      Save
+    </text>
+    <text x="510" y="261" class="action">Cancel</text>
+    <rect x="382" y="299" width="106" height="44" fill="#172026" />
+    <rect
+      x="376"
+      y="293"
+      width="118"
+      height="56"
+      fill="none"
+      stroke="#1473e6"
+      stroke-width="3"
+    />
+    <text
+      x="435"
+      y="327"
+      text-anchor="middle"
+      style="fill: #fdfdfc; font-size: 16px; font-weight: 600"
+    >
+      Save
+    </text>
+    <text x="510" y="327" class="muted">Focus</text>
+  </g>
+  <path d="M 642.5 204 V 352" class="line" />
+  <g aria-label="Inputs and state">
+    <text x="668" y="208" class="label">03 / INPUT &amp; STATE</text>
+    <text x="668" y="244" class="body">Project name</text>
+    <rect
+      x="668"
+      y="256"
+      width="284"
+      height="44"
+      fill="none"
+      stroke="#aab5af"
+    />
+    <text x="681" y="284" class="body">Shibui</text>
+    <text x="668" y="336" class="body">Active</text>
+    <text x="732" y="336" class="muted">Text-first status</text>
+  </g>
+  <!-- Distinct navigation and content roles: 96px between the regions. -->
+  <text x="48" y="419" class="label">04 / BOUNDARIES FOLLOW THE CONTENT</text>
+  <g aria-label="Menu and content use a wider gap">
+    <rect x="48" y="445" width="128" height="38" fill="#e9f1ef" />
+    <text x="61" y="470" font-size="16" font-weight="600">General</text>
+    <text x="61" y="512" class="muted">Preferences</text>
+    <path d="M 224.5 453 V 577" class="line" />
+    <text x="272" y="470" class="heading">Settings</text>
+    <text x="272" y="507" class="body">Separate roles.</text>
+    <text x="272" y="533" class="body">Room to breathe.</text>
+    <text x="272" y="573" class="muted">Menu + content / 96px gap</text>
+  </g>
+  <!-- A coupled editing/results loop keeps its 48px gap. -->
+  <g aria-label="Editing and results stay closer">
+    <text x="570" y="470" class="heading">Project hours</text>
+    <text x="570" y="510" class="body">Atlas</text>
+    <rect x="699" y="485" width="62" height="38" fill="none" stroke="#aab5af" />
+    <text x="711" y="510" class="body">16</text>
+    <text x="570" y="559" class="body">Luna</text>
+    <rect x="699" y="534" width="62" height="38" fill="none" stroke="#aab5af" />
+    <text x="711" y="559" class="body">12</text>
+    <path d="M 785.5 453 V 563" class="line" />
+    <text x="809" y="470" class="heading">Capacity</text>
+    <text x="809" y="512" font-size="28" font-weight="600">28 / 40</text>
+    <text x="809" y="550" class="muted">12 hours left</text>
+    <text x="570" y="607" class="muted">Editing + results / 48px gap</text>
+  </g>
+  <text x="48" y="665" class="muted">
+    1px rules. Inset ends. Choose distance by task relationships, then refine by
+    eye.
+  </text>
+  <!-- Color is semantic, with no decorative gradients or shadows. -->
+  <text x="48" y="727" class="label">05 / A RESTRAINED PALETTE</text>
+  <rect x="48" y="750" width="22" height="22" fill="#172026" />
+  <text x="80" y="766" class="muted">Text</text>
+  <rect x="170" y="750" width="22" height="22" fill="#176b5b" />
+  <text x="202" y="766" class="muted">Accent</text>
+  <rect x="306" y="750" width="22" height="22" fill="#e9f1ef" />
+  <text x="338" y="766" class="muted">Selection</text>
+  <rect x="461" y="750" width="22" height="22" fill="#a33a32" />
+  <text x="493" y="766" class="muted">Danger</text>
+  <text x="952" y="766" text-anchor="end" class="muted">
+    No shadows. No decorative surfaces.
+  </text>
+</svg>
