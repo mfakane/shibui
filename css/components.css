@@ -230,9 +230,10 @@
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
 }
 .principle-grid {
+  --column-gap: var(--space-6);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-6);
+  gap: var(--column-gap);
 }
 .principle {
   padding-block-start: var(--space-4);
@@ -337,7 +338,7 @@ input[aria-invalid="true"] {
 
 /* Column layouts: app navigation + task; settings add a local navigation column. */
 .app-shell {
-  --column-gap: var(--space-7);
+  --column-gap: calc(2 * var(--space-7));
   width: min(calc(100% - 3rem), 82rem);
   min-height: 100svh;
   margin-inline: auto;
@@ -533,6 +534,26 @@ input[aria-invalid="true"] {
 }
 @media (max-width: 48rem) {
   .app-shell[data-column-divider] > :nth-child(2)::before {
+    content: none;
+  }
+}
+
+/* Small peer groups keep their existing gap; separators add no layout width. */
+.principle-grid[data-separators="columns"] > .principle {
+  position: relative;
+}
+.principle-grid[data-separators="columns"]
+  > .principle:not(:nth-child(3n + 1))::before {
+  content: "";
+  position: absolute;
+  inset-inline-start: calc(var(--column-gap) / -2);
+  inset-block: 8px;
+  border-inline-start: 1px solid var(--line);
+  pointer-events: none;
+}
+@media (max-width: 44rem) {
+  .principle-grid[data-separators="columns"]
+    > .principle:not(:nth-child(3n + 1))::before {
     content: none;
   }
 }

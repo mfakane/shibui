@@ -55,3 +55,17 @@ Add `data-column-divider` to a two-column group only when the navigation/content
 The line follows the content column's height, even if the navigation column is shorter. Keep `align-items: start` so a taller sidebar does not stretch the content and its separator. For the outer layout, the content column is `.app-main`; for nested settings it is `.settings-content`.
 
 The outer shell supplies 3rem top and 2rem bottom padding (1.5rem top on mobile), so the line cannot cut through the page edges. The sidebar keeps its natural height and scrolls with the content. When columns stack, their vertical separator disappears; no full-width horizontal replacement is added. Content changes, wrapping, and font loading naturally resize the CSS line along with its content column.
+
+### Spacing depends on the boundary
+
+A line's presence does not determine its surrounding spacing. Choose the gap for the scale and relationship of the regions, then center the line inside it.
+
+| Context | Total column gap | Space on each side of the line |
+| --- | --- | --- |
+| Workspace sidebar and main task | 6rem | Approximately 3rem |
+| Local settings navigation and controls | 2rem | Approximately 1rem |
+| Homepage principle columns | 2rem | Approximately 1rem |
+
+The application gap is twice its previous 3rem spacing; local settings and small peer groups retain their existing dimensions. Each layout sets `--column-gap` locally so the choice does not widen unrelated components.
+
+The homepage opts into `data-separators="columns"` on `.principle-grid`. Its 1px rules sit between items in each three-column row, inset 8px at the ends. There is no line before the first item of a row, across the row gap, or after the last item. At the existing single-column breakpoint, the rules disappear. The pseudo-elements take no layout space, so adding them does not change item widths or spacing.
