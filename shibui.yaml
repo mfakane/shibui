@@ -30,7 +30,8 @@ style_profiles:
       border:
         default: none
         priority: fallback
-        allowed_for: [input-boundary, explicit-separator, focus-ring, dangerous-boundary]
+        allowed_for:
+          [input-boundary, explicit-separator, focus-ring, dangerous-boundary]
       background:
         max_levels: 3
         levels: [canvas, region, selected]
