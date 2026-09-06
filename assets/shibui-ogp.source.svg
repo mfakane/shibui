@@ -1,0 +1,55 @@
+<svg
+  xmlns="http://www.w3.org/2000/svg"
+  width="1200"
+  height="630"
+  viewBox="0 0 1200 630"
+  role="img"
+  aria-labelledby="ogp-title ogp-desc"
+>
+  <title id="ogp-title">
+    Shibui Design System — Less surface. More structure.
+  </title>
+  <desc id="ogp-desc">
+    The shib[ui] wordmark above the project motto on an off-white canvas. A
+    design system for quiet, structured interfaces.
+  </desc>
+  <rect width="1200" height="630" fill="#fdfdfc" />
+  <!-- Original assets/shibui-logo.svg, embedded without redrawing. -->
+  <g transform="translate(48 48) scale(1.5)">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="232"
+      height="96"
+      viewBox="0 0 232 96"
+      role="img"
+      aria-labelledby="logo-title logo-desc"
+    >
+      <title id="logo-title">shib[ui] — Shibui Design System</title>
+      <desc id="logo-desc">
+        A light sans-serif wordmark with medium-weight ui enclosed in green
+        square brackets.
+      </desc>
+      <rect width="232" height="96" fill="#fdfdfc" />
+      <!-- Keep adjacent glyphs together; whitespace changes the wordmark. -->
+      <!-- prettier-ignore -->
+      <text x="20" y="68" font-family="'Segoe UI', 'Helvetica Neue', 'Nimbus Sans', Arial, sans-serif" font-size="60" font-weight="300" letter-spacing="-1" fill="#172026">shib<tspan fill="#176b5b">[</tspan><tspan font-weight="500">ui</tspan><tspan fill="#176b5b">]</tspan></text>
+    </svg>
+  </g>
+  <g fill="#172026" font-family="Segoe UI, sans-serif">
+    <text x="78" y="304" font-size="80" font-weight="600" letter-spacing="-2">
+      Less surface.
+    </text>
+    <text x="78" y="396" font-size="80" font-weight="600" letter-spacing="-2">
+      More structure.
+    </text>
+    <text x="80" y="466" font-size="28" fill="#657078">
+      A design system for quiet, structured interfaces.
+    </text>
+    <text x="80" y="554" font-size="22" fill="#657078">
+      Shibui Design System
+    </text>
+    <text x="1120" y="554" font-size="22" fill="#657078" text-anchor="end">
+      github.com/mfakane/shibui
+    </text>
+  </g>
+</svg>
