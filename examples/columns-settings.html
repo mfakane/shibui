@@ -7,11 +7,12 @@
     <link rel="stylesheet" href="../css/tokens.css" />
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/components.css" />
+    <script src="../js/column-dividers.js" defer></script>
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
     <!-- The application navigation and current task share the outer grid. -->
-    <div class="app-shell">
+    <div class="app-shell" data-column-divider>
       <aside class="app-sidebar" aria-label="Workspace">
         <div>
           <a class="brand" href="../index.html">Acme</a>
@@ -36,7 +37,7 @@
           </p>
         </header>
         <!-- A nested grid adds section navigation without another surface. -->
-        <div class="settings-columns">
+        <div class="settings-columns" data-column-divider>
           <nav class="section-nav" aria-label="Settings sections">
             <a href="#general">General</a>
             <a href="#preferences">Preferences</a>

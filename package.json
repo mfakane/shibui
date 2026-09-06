@@ -2,8 +2,8 @@
   "name": "shibui-design-system",
   "private": true,
   "scripts": {
-    "format": "prettier --write \"**/*.{html,css,json,yaml,yml}\"",
-    "format:check": "prettier --check \"**/*.{html,css,json,yaml,yml}\""
+    "format": "prettier --write \"**/*.{html,css,js,json,yaml,yml}\"",
+    "format:check": "prettier --check \"**/*.{html,css,js,json,yaml,yml}\""
   },
   "devDependencies": {
     "prettier": "3.9.6"
