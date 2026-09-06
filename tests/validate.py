@@ -67,7 +67,7 @@ def main() -> int:
     if errors:
         print("\n".join(errors), file=sys.stderr)
         return 1
-    print(f"Validated {len(html_files)} HTML pages and Shibui visual constraints.")
+    print(f"Validated {len(html_files)} HTML pages and Shibui standard-profile visual defaults.")
     return 0
 
 

@@ -1,43 +1,52 @@
 name: Shibui Design System
-version: 0.1.0
+version: 0.2.0
 tagline: Less surface. More structure.
 principles:
-  - show-less-by-default
-  - reveal-detail-on-demand
-  - one-primary-task-per-view
+  - preserve-task-required-information
+  - reveal-secondary-detail-on-demand
+  - one-clear-purpose-per-view
   - structure-through-space
-  - no-meaningless-containers
+  - meaningful-containers-only
 hierarchy_priority: [whitespace, alignment, typography, background, border]
-visual:
-  shadow: forbidden
-  elevation: forbidden
-  gradient: forbidden
-  border:
-    default: none
-    priority: fallback
-    allowed_for: [input-boundary, explicit-separator, focus-ring, dangerous-boundary]
-  background:
-    max_levels: 3
-    levels: [canvas, region, selected]
-  radius:
-    default: 0
-    small: 2px
-    pill: semantic-only
-  color:
-    accent_count: 1
-    semantic_usage: informational-only
 information:
-  default_density: low
-  prefer_drilldown: true
-  persistent_secondary_panels: discouraged
+  density: task-dependent
+  interaction_models: [page, gui-tool]
+  simultaneous_task_context: required
+  prefer_drilldown_for: secondary-content
+  persistent_panels: allowed-when-task-required
   progressive_disclosure:
     required_when_secondary_content_is_large: true
-components:
-  card: { default: discouraged }
-  status: { preferred_style: text }
-  tags: { decorative_usage: forbidden }
-  icon: { decorative_usage: discouraged }
 accessibility:
   visible_focus: required
   color_only_meaning: forbidden
   reduced_motion: required
+style_profile: standard
+style_profiles:
+  standard:
+    visual:
+      shadow: none
+      elevation: none
+      gradient: none
+      border:
+        default: none
+        priority: fallback
+        allowed_for: [input-boundary, explicit-separator, focus-ring, dangerous-boundary]
+      background:
+        max_levels: 3
+        levels: [canvas, region, selected]
+      radius:
+        default: 0
+        small: 2px
+        pill: semantic-only
+      color:
+        accent_count: 1
+        semantic_usage: informational-only
+    components:
+      card: { default: discouraged }
+      status: { preferred_style: text, marker: opt-in }
+      principle: { separator: opt-in }
+      tags: { decorative_usage: forbidden }
+      icon: { decorative_usage: discouraged }
+profile_overrides:
+  declaration: name-and-purpose
+  shared_principles: required

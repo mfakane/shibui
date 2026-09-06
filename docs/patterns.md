@@ -1,5 +1,19 @@
 # Patterns
 
+## Page and GUI tool
+
+Compare `examples/page.html` and `examples/tool.html`. Both concern a project plan and use the same tokens and components.
+
+| | Reading page | GUI tool |
+| --- | --- | --- |
+| Task | Understand the planning method | Compare and adjust allocations |
+| Structure | Article with sequential headings | Editable table and live capacity summary |
+| Density | Comfortable line length and section spacing | Related values and controls visible together |
+| Disclosure | Optional background notes | Only calculation notes; inputs and results stay visible |
+| Small screens | Reflow text | Stack the summary and keep the table in a labeled scroll region |
+
+The tool's persistent result region belongs to the primary task. It is not an exception to progressive disclosure. Edits are local to the demo and are not saved.
+
 ## Focused index
 
 Present categories as a quiet list of links with short descriptions. Navigate to a dedicated view instead of rendering every category's controls on one settings page. See `examples/settings.html`.
@@ -14,7 +28,7 @@ Show fields required for the common path. Put infrequent configuration in a labe
 
 ## Status text
 
-Use plain text by default. Add a small dot only where scanning several states is central to the task. Do not put routine status inside a pill-shaped background.
+Use plain text by default. Opt in with `data-marker="dot"` only where scanning several states is central to the task. Do not put routine status inside a pill-shaped background.
 
 ## Meaningful region
 

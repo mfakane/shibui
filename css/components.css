@@ -34,8 +34,8 @@
 .filters a { color: var(--text-muted); text-decoration: none; }
 .filters a[aria-current="true"] { color: var(--text); border-block-end: 2px solid var(--accent); }
 .status { white-space: nowrap; }
-.status::before { content: ""; display: inline-block; width: 0.45rem; height: 0.45rem; margin-inline-end: var(--space-2); border-radius: 50%; background: var(--text-muted); vertical-align: 0.08em; }
-.status[data-state="active"]::before { background: var(--accent); }
+.status[data-marker="dot"]::before { content: ""; display: inline-block; width: 0.45rem; height: 0.45rem; margin-inline-end: var(--space-2); border-radius: 50%; background: var(--text-muted); vertical-align: 0.08em; }
+.status[data-marker="dot"][data-state="active"]::before { background: var(--accent); }
 .facts { display: grid; grid-template-columns: 8rem 1fr; gap: var(--space-3) var(--space-5); margin: 0; }
 .facts dt { color: var(--text-muted); }
 .facts dd { margin: 0; }
@@ -48,7 +48,8 @@
 .hero { padding-block: clamp(4rem, 12vw, 9rem); }
 .hero .lede { max-width: 38rem; font-size: clamp(1.125rem, 2.5vw, 1.45rem); }
 .principle-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-6); }
-.principle { padding-block-start: var(--space-4); border-block-start: 2px solid var(--text); }
+.principle { padding-block-start: var(--space-4); }
+.principle[data-separator="top"] { border-block-start: 2px solid var(--text); }
 .principle p { color: var(--text-muted); }
 .footer { padding-block: var(--space-6); color: var(--text-muted); font-size: 0.8125rem; }
 @media (max-width: 44rem) {
@@ -57,4 +58,23 @@
   .table-wrap { overflow-x: auto; }
   .facts { grid-template-columns: 1fr; gap: var(--space-1); }
   .facts dd + dt { margin-block-start: var(--space-3); }
+}
+
+/* Reading and manipulation share tokens; density follows the task. */
+.reading { max-width: var(--measure-text); }
+.workspace .page-header { max-width: none; margin-block-end: var(--space-6); }
+.workspace h1 { font-size: clamp(1.75rem, 4vw, 2.5rem); }
+.workspace-grid { display: grid; grid-template-columns: minmax(0, 2fr) minmax(14rem, 1fr); gap: var(--space-7); align-items: start; }
+.workspace-grid > section { min-width: 0; }
+.allocation-table { min-width: 25rem; }
+.allocation-table th[scope="row"] { color: var(--text); font-size: 1rem; text-transform: none; letter-spacing: normal; }
+.allocation-table input { min-width: 5rem; }
+.allocation-table td:last-child { width: 7rem; }
+.capacity-result { margin-block-start: var(--space-5); }
+.capacity-result p { margin-block-end: var(--space-2); }
+[data-state="over"], .input-error { color: var(--danger); }
+input[aria-invalid="true"] { border-color: var(--danger); }
+.visually-hidden { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; border: 0; }
+@media (max-width: 44rem) {
+  .workspace-grid { grid-template-columns: 1fr; gap: var(--space-6); }
 }

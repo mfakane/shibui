@@ -1,47 +1,35 @@
 # Principles
 
-Shibui is a low-surface design system. It is restrained, not empty: every remaining element has a clear job, and structure remains visible without decorative scaffolding.
+Shibui builds quiet, structured interfaces by making relationships and actions clear. These principles apply to reading pages and GUI tools alike. Visual defaults are defined separately in [the standard style](style.md).
 
-## 1. Show less by default
+## 1. Preserve the information needed for the task
 
-Begin with the information required for the current task. Remove speculative context and move large secondary content to a focused destination. Low density is an information-architecture decision, not merely extra padding.
+Start with the user's primary task. Keep the information and controls needed to complete it available together. Density follows the task: a reading page can be spacious; a comparison table or editor can be dense. Removing required context, or making users remember values between views, does not simplify the work.
 
-## 2. Reveal detail on demand
+## 2. Reveal secondary detail on demand
 
-Use navigation, dedicated detail views, native disclosure controls, or explicit actions. A project list should help someone choose a project; activity and metadata belong on the chosen project's view.
+Move substantial secondary content to a focused destination or labeled disclosure. Keep required comparisons, editing controls, and immediate feedback visible. A persistent inspector is appropriate when editing the selected object is part of the main task.
 
-Disclosure must remain discoverable. Label the action by what it reveals—“Show archived projects” is better than an unlabeled chevron.
+Disclosure must remain discoverable, with descriptive triggers and logical keyboard navigation. Do not hide errors or prerequisites behind optional sections.
 
-## 3. One screen, one primary task
+## 3. Give each view a clear purpose
 
-State the view's purpose as a verb: choose a setting, find a project, understand a project, or update an organization. Supporting actions may exist, but they must not compete with that purpose.
+State the purpose as a verb phrase: read a guide, choose a project, or compare and adjust a plan. A tool may need several coordinated regions to serve that purpose. One primary task does not mean one control or one visible region.
+
+Choose the interaction model before the layout. Pages support reading and navigation; GUI tools support repeated manipulation, comparison, selection, and immediate feedback. A product may contain both. See [paired examples](patterns.md#page-and-gui-tool).
 
 ## 4. Structure through space
 
-Build hierarchy in this order:
-
-1. Whitespace
-2. Alignment
-3. Typography
-4. Background
-5. Border
-
-Do not skip directly to a box. Proximity groups related controls; larger intervals separate sections; a shared edge makes relationships legible.
+Build hierarchy with whitespace, alignment, and typography before adding backgrounds or borders. Use proximity to group related controls, larger intervals to separate sections, and shared edges to make relationships legible. Whitespace must preserve useful context and readable density.
 
 ## 5. Draw only meaningful containers
 
-A container earns a visible treatment when it communicates state, interaction, or a semantic boundary. Selection can use a subtle background. An input needs a boundary. A generic content grouping usually needs neither.
+A visible treatment should communicate interaction, selection, warning, input, or a boundary that would otherwise be ambiguous. Ordinary groups, page headers, and footers need no line by default. Prefer semantic sections, groups, rows, and regions over generic cards.
 
-Prefer `Page`, `Section`, `Region`, `Group`, `Stack`, `Row`, and `Divider` over a generic `Card` primitive.
+## 6. Preserve affordance and access
 
-## 6. Keep the visual language quiet
+Controls must be recognizable, keyboard focus conspicuous, targets usable, and meaning independent of color. Use semantic HTML and native controls where appropriate. Preserve task context when adapting to smaller screens; stacking regions or allowing a labeled comparison table to scroll can be better than hiding required values.
 
-- Never use shadows, elevation, or decorative gradients.
-- Limit backgrounds to canvas, region, and selected states.
-- Keep geometry rectilinear; reserve pills for controls whose shape carries meaning.
-- Use one accent and restrained semantic colors.
-- Let text carry information; add icons only when they improve recognition or enable an icon-only action.
+## Principles and standard style
 
-## 7. Preserve affordance and access
-
-Restraint must not make controls ambiguous. Inputs may have borders, keyboard focus must be conspicuous, interactive targets must be usable, and meaning must never depend on color alone. Progressive disclosure must preserve a direct route to hidden content.
+The principles above are shared requirements. The standard style supplies visual defaults, including rectilinear geometry and no shadows. Products can define a different named style without changing these principles. Record visual overrides once with their purpose; evaluate their usability against the principles. A rounded control is not automatically a structural failure, and an undecorated screen is not automatically usable.

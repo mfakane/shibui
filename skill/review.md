@@ -3,20 +3,23 @@
 ## Context
 
 - Primary task:
+- Interaction model (page / GUI tool):
+- Required simultaneous context:
+- Style profile and declared overrides:
 - Required content:
 - Secondary content:
 
 ## Check
 
-- [ ] One primary task is evident.
+- [ ] One primary task is evident, with required context and controls available together.
 - [ ] Large secondary content is disclosed or moved to a focused view.
 - [ ] Persistent panels are essential to the primary task.
 - [ ] Spacing, alignment, and typography do the grouping first.
 - [ ] Every visible container boundary carries meaning.
-- [ ] Surface nesting is absent.
-- [ ] Shadows, elevation, and decorative gradients are absent.
+- [ ] Surface nesting is not used merely to create hierarchy.
+- [ ] Visual checks below use the selected profile; standard defaults omit shadows, elevation, and decorative gradients.
 - [ ] Background levels do not exceed canvas, region, and selected.
-- [ ] Borders and radii have an affordance or semantic reason.
+- [ ] Borders and radii follow the selected profile; status dots and section rules are opt-in.
 - [ ] Status is text-first; tags and icons are functional.
 - [ ] Helper text adds non-obvious information.
 - [ ] Focus is visible and meaning does not depend on color.

@@ -1,11 +1,11 @@
 # Review rules
 
-Use these near-binary checks after establishing the view's primary task. An exception is acceptable only when its purpose is recorded.
+Establish the primary task, interaction model (page or GUI tool), required simultaneous context, and selected style profile first. Information architecture, structure, and accessibility are shared requirements. Visual language and presentation defaults are reviewed against the selected profile; record intentional profile overrides separately from principle failures.
 
 ## Information architecture
 
-- **IA-01 — Primary task:** The page title, first content section, and primary action support one stated task.
-- **IA-02 — Secondary content:** Large secondary content is absent by default or available through an explicit drill-down/disclosure.
+- **IA-01 — Primary task:** The title, content, and actions support one stated task, including coordinated regions when manipulation or comparison requires them.
+- **IA-02 — Secondary content:** Large secondary content is disclosed or moved to a focused view; required comparisons, controls, results, and errors remain available together.
 - **IA-03 — Persistent panels:** No inspector, activity feed, metadata panel, or filters remain visible unless required for the primary task.
 - **IA-04 — Discoverability:** Every hidden region has a descriptive trigger and a logical focus/navigation path.
 
@@ -16,7 +16,7 @@ Use these near-binary checks after establishing the view's primary task. An exce
 - **ST-03 — Nested surfaces:** No surface is nested inside another surface merely to create hierarchy.
 - **ST-04 — Dividers:** Each divider separates regions that remain ambiguous without it.
 
-## Visual language
+## Visual language — standard profile defaults
 
 - **VI-01 — Effects:** `box-shadow`, `text-shadow`, filter-based shadows, and decorative gradients are absent.
 - **VI-02 — Surface limit:** A view uses no more than canvas, region, and selected background levels.
@@ -26,6 +26,8 @@ Use these near-binary checks after establishing the view's primary task. An exce
 - **VI-06 — Typography:** Page and section hierarchy uses size, placement, and whitespace; body copy is not needlessly bold.
 
 ## Components and content
+
+CO-01 through CO-04 describe standard presentation defaults; helper text and form usability apply across profiles.
 
 - **CO-01 — Cards:** Generic cards are absent. Card-like treatment has a documented interaction or semantic purpose.
 - **CO-02 — Status:** Status is text-first; a dot or color is added only when faster recognition matters.
@@ -43,4 +45,4 @@ Use these near-binary checks after establishing the view's primary task. An exce
 
 ## Review output
 
-For each failure, report: rule ID, observed issue, why it competes with the primary task, and a specific simpler replacement. Prioritize architecture before cosmetic cleanup.
+For each failure, report: rule ID, observed issue, its effect on the primary task or accessibility, and a specific simpler replacement. Prioritize architecture before cosmetic cleanup.
