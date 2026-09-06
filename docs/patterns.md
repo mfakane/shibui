@@ -37,3 +37,13 @@ Use the region background for content that has a distinct semantic role, such as
 ## Destructive action
 
 Keep destructive actions quiet while inactive, separate them from the primary workflow, and require clear confirmation. Use semantic red for the action text or a meaningful warning boundary—not for an entire decorative panel.
+
+## Application columns
+
+`examples/columns.html` uses `.app-shell` to place workspace navigation beside a project list. `examples/columns-settings.html` nests `.settings-columns` inside the task area for a third column of local section links. Global navigation changes destinations; local navigation moves to named sections of the current settings view. Both remain ordinary keyboard-accessible links.
+
+The sidebar supports movement between workspace tasks. The local column is useful when users revisit several settings sections. These are optional patterns, not a required shell for reading pages or focused tools. Neither navigation column needs a border or separate background; selection alone uses the selected background plus heavier text and `aria-current`.
+
+At 68rem and below, local navigation moves above the settings. At 48rem and below, workspace navigation moves above the main content and the sample identity is omitted. At 36rem and below, field labels stack above controls. Required inputs and section links remain available. Only the project table scrolls horizontally when needed, through a named, focusable region.
+
+The settings example is a live control preview without persistence or a save action. Keep the reference source expanded and run `npm run format` after edits.

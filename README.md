@@ -10,13 +10,15 @@ Shibui is a framework-independent design system for quiet, structured interfaces
 - Choose the interaction model (reading page or GUI tool) and read the [standard style](docs/style.md) separately from the shared principles.
 - Use the [review rules](docs/rules.md) and machine-readable [`shibui.yaml`](shibui.yaml) as implementation constraints.
 - Link [`css/tokens.css`](css/tokens.css), [`css/base.css`](css/base.css), and [`css/components.css`](css/components.css), in that order.
-- Open [`index.html`](index.html) to browse six framework-free reference pages.
+- Open [`index.html`](index.html) to browse eight framework-free reference pages.
 - Give Coding Agents [`skill/SKILL.md`](skill/SKILL.md) for implementation and review workflows.
 
 ## Reference pages
 
 | Page | Primary task | Disclosure pattern |
 | --- | --- | --- |
+| [Column project list](examples/columns.html) | Find a project | Persistent workspace navigation |
+| [Column settings](examples/columns-settings.html) | Adjust workspace settings | Local section navigation inside the app layout |
 | [Planning guide](examples/page.html) | Read a planning method | Optional background notes |
 | [Allocation tool](examples/tool.html) | Compare and adjust a plan | Keep inputs and results together |
 | [Settings](examples/settings.html) | Choose a settings category | Navigate to a focused category |
