@@ -12,7 +12,7 @@
     column dividers. A single green action anchors the open layout.
   </desc>
   <!-- Heading and supporting lines: hierarchy without a containing surface. -->
-  <g fill="#172026">
+  <g fill="#657078">
     <rect x="40" y="48" width="136" height="12" />
     <rect x="40" y="71" width="94" height="12" />
   </g>
