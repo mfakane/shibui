@@ -472,6 +472,7 @@ input[aria-invalid="true"] {
 /* Reflow local navigation first, then move workspace navigation above the task. */
 @media (max-width: 68rem) {
   .settings-columns {
+    --column-gap: var(--gap-peer);
     grid-template-columns: minmax(0, 1fr);
   }
   .section-nav {

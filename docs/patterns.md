@@ -56,7 +56,7 @@ The line follows the content column's height, even if the navigation column is s
 
 The outer shell supplies 3rem top and 2rem bottom padding (1.5rem top on mobile), so the line cannot cut through the page edges. The sidebar keeps its natural height and scrolls with the content. When columns stack, their vertical separator disappears; no full-width horizontal replacement is added. Content changes, wrapping, and font loading naturally resize the CSS line along with its content column.
 
-### Spacing depends on the boundary
+### Spacing depends on roles and visual balance
 
 A line's presence does not determine its surrounding spacing. Choose the gap for the relationship of the regions, then center the line inside it. Menu and content are different functional roles, so both workspace navigation and local settings navigation use the wide region gap. Small peer items use the compact gap. Nesting depth or apparent size alone does not determine spacing.
 
@@ -67,5 +67,7 @@ A line's presence does not determine its surrounding spacing. Choose the gap for
 | Homepage principle columns | 2rem | Approximately 1rem |
 
 `--gap-region` supplies the 6rem gap for menu/content boundaries at both navigation levels. `--gap-peer` supplies the 2rem gap for comparable items such as homepage principles. Each layout assigns the appropriate token to `--column-gap`; the divider remains centered automatically.
+
+These values are reference defaults, not mandatory dimensions. Check the rendered composition: menus and content should feel distinct, peer items should still form a group, and inputs and text should retain comfortable widths. Tune the local gap or stack columns if wider spacing causes crowding or excessive wrapping; avoid empty space that makes related regions feel disconnected. Keep the divider centered in the resulting gap. When local settings navigation stacks, use the compact gap between it and the controls because the horizontal composition has changed.
 
 The homepage opts into `data-separators="columns"` on `.principle-grid`. Its 1px rules sit between items in each three-column row, inset 8px at the ends. There is no line before the first item of a row, across the row gap, or after the last item. At the existing single-column breakpoint, the rules disappear. The pseudo-elements take no layout space, so adding them does not change item widths or spacing.

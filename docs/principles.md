@@ -20,7 +20,7 @@ Choose the interaction model before the layout. Pages support reading and naviga
 
 ## 4. Structure through space
 
-Build hierarchy with whitespace, alignment, and typography before adding backgrounds or borders. Use proximity to group related controls, larger intervals to separate sections, and shared edges to make relationships legible. Whitespace must preserve useful context and readable density.
+Build hierarchy with whitespace, alignment, and typography before adding backgrounds or borders. Use proximity to group related controls, larger intervals to separate sections, and shared edges to make relationships legible. Whitespace must preserve useful context and readable density. Let the roles of adjacent regions guide their separation: menu and content usually need more space than comparable peer items, even inside a nested layout. Refine that starting point against the rendered composition, including grouping, balance, wrapping, and usable content widths.
 
 ## 5. Draw only meaningful containers
 
