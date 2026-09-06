@@ -58,14 +58,14 @@ The outer shell supplies 3rem top and 2rem bottom padding (1.5rem top on mobile)
 
 ### Spacing depends on the boundary
 
-A line's presence does not determine its surrounding spacing. Choose the gap for the scale and relationship of the regions, then center the line inside it.
+A line's presence does not determine its surrounding spacing. Choose the gap for the relationship of the regions, then center the line inside it. Menu and content are different functional roles, so both workspace navigation and local settings navigation use the wide region gap. Small peer items use the compact gap. Nesting depth or apparent size alone does not determine spacing.
 
 | Context | Total column gap | Space on each side of the line |
 | --- | --- | --- |
 | Workspace sidebar and main task | 6rem | Approximately 3rem |
-| Local settings navigation and controls | 2rem | Approximately 1rem |
+| Local settings navigation and controls | 6rem | Approximately 3rem |
 | Homepage principle columns | 2rem | Approximately 1rem |
 
-The application gap is twice its previous 3rem spacing; local settings and small peer groups retain their existing dimensions. Each layout sets `--column-gap` locally so the choice does not widen unrelated components.
+`--gap-region` supplies the 6rem gap for menu/content boundaries at both navigation levels. `--gap-peer` supplies the 2rem gap for comparable items such as homepage principles. Each layout assigns the appropriate token to `--column-gap`; the divider remains centered automatically.
 
 The homepage opts into `data-separators="columns"` on `.principle-grid`. Its 1px rules sit between items in each three-column row, inset 8px at the ends. There is no line before the first item of a row, across the row gap, or after the last item. At the existing single-column breakpoint, the rules disappear. The pseudo-elements take no layout space, so adding them does not change item widths or spacing.

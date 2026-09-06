@@ -11,7 +11,7 @@ Establish the primary task, interaction model (page or GUI tool), required simul
 
 ## Structure
 
-- **ST-01 — Grouping order:** Related content is grouped by spacing and alignment before backgrounds or borders.
+- **ST-01 — Grouping order:** Related content is grouped by spacing and alignment before backgrounds or borders. Use wider spacing between different functional roles (such as menu and content), including nested navigation; use compact spacing between comparable peer items.
 - **ST-02 — Semantic containers:** Every visibly drawn container communicates interaction, selection, warning, input, or another named meaning.
 - **ST-03 — Nested surfaces:** No surface is nested inside another surface merely to create hierarchy.
 - **ST-04 — Dividers:** Each divider separates regions that remain ambiguous without it.

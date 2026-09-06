@@ -22,6 +22,8 @@
   --space-6: 2rem;
   --space-7: 3rem;
   --space-8: 4.5rem;
+  --gap-region: calc(2 * var(--space-7));
+  --gap-peer: var(--space-6);
   --measure: 68rem;
   --measure-text: 42rem;
   --radius-default: 0;

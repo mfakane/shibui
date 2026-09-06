@@ -230,7 +230,7 @@
   font-size: clamp(1.125rem, 2.5vw, 1.45rem);
 }
 .principle-grid {
-  --column-gap: var(--space-6);
+  --column-gap: var(--gap-peer);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--column-gap);
@@ -338,7 +338,7 @@ input[aria-invalid="true"] {
 
 /* Column layouts: app navigation + task; settings add a local navigation column. */
 .app-shell {
-  --column-gap: calc(2 * var(--space-7));
+  --column-gap: var(--gap-region);
   width: min(calc(100% - 3rem), 82rem);
   min-height: 100svh;
   margin-inline: auto;
@@ -426,7 +426,7 @@ input[aria-invalid="true"] {
   color: inherit;
 }
 .settings-columns {
-  --column-gap: var(--space-6);
+  --column-gap: var(--gap-region);
   display: grid;
   grid-template-columns: 10rem minmax(0, 1fr);
   gap: var(--column-gap);
