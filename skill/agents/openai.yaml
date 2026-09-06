@@ -1,0 +1,4 @@
+interface:
+  display_name: "Shibui Design System"
+  short_description: "Build and review quiet, structured interfaces"
+  default_prompt: "Apply Shibui principles to implement or review this interface."
