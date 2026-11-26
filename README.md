@@ -8,6 +8,10 @@ Shibui is a framework-independent design system for quiet, structured interfaces
 
 ![Shibui visual reference: typography, buttons, focus, inputs, content-length dividers, and role-dependent spacing](assets/shibui-overview.svg)
 
+The README images are fixed light-theme specimens with their own canvas, so
+they stay readable on either GitHub theme. The live reference pages show both
+appearances.
+
 ## Start here
 
 - Read the [principles](docs/principles.md) before designing a view.

@@ -6,14 +6,14 @@
   --font-mono: "SFMono-Regular", Consolas, monospace;
   /* Dark values adapt the Stream Pointer dark palette to shared UI roles. */
   --text: light-dark(#172026, #edf2f4);
-  --text-muted: light-dark(#657078, #a8b5bf);
+  --text-muted: light-dark(#636e76, #a8b5bf);
   --canvas: light-dark(#fdfdfc, #101317);
   --region: light-dark(#f3f5f4, #181d22);
   --selected: light-dark(#e9f1ef, #263322);
   --accent: light-dark(#176b5b, #bcf478);
   --accent-hover: light-dark(#0f5548, #d0ffa0);
   --line: light-dark(#d8ddda, #333b43);
-  --input-line: light-dark(#aeb7b2, #65737e);
+  --input-line: light-dark(#818c86, #6d7b86);
   --danger: light-dark(#a33a32, #ffaaa2);
   --focus: light-dark(#1473e6, #bcf478);
   --primary-text: light-dark(var(--canvas), #192314);
