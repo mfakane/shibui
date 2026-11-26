@@ -64,7 +64,9 @@ No build step or frontend dependency is required. Serve the repository with any 
 
 ## Browser support
 
-The reference CSS targets current evergreen browsers. It respects reduced-motion preferences and uses native HTML controls wherever possible.
+The reference CSS targets current evergreen browsers. It follows the system light/dark preference and respects reduced motion.
+To force one appearance, set `data-theme="light"` or `data-theme="dark"` on
+`<html>`. See the [standard style](docs/style.md#light-and-dark-appearance).
 
 ## Source formatting
 

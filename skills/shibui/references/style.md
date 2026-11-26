@@ -11,6 +11,20 @@ This is Shibui's default visual profile, implemented by `../assets/css/tokens.cs
 
 Density is task-dependent, not a visual conformity score. Both page and tool examples use this profile.
 
+## Light and dark appearance
+
+The standard profile follows the system light/dark preference without JavaScript.
+To override it, set `data-theme="light"` or `data-theme="dark"` on the root
+`<html>` element. Omit the attribute to follow the system again. Native controls
+follow the same color scheme.
+
+Both appearances share the same visual rules, including the three background
+roles. The dark palette adapts [Stream Pointer Overlay’s dark profile](https://github.com/mfakane/stream-pointer-overlay/blob/master/DESIGN.md):
+blue-black canvas, quiet secondary regions, and one lime accent for actions and
+focus. Keep content, controls, and states on semantic CSS tokens so they work in
+either appearance. Product-specific effects such as the overlay’s preview grid
+are not part of the shared profile.
+
 ## Explicit treatments
 
 `.status` is plain text. Add `data-marker="dot"` only when scanning states benefits from a redundant marker; retain the text label. `data-state="active"` sets the marker's color but does not enable it.

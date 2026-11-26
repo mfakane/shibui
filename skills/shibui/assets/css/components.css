@@ -124,12 +124,12 @@
   color: var(--accent-hover);
 }
 .button[data-variant="primary"] {
-  background: var(--text);
-  color: var(--canvas);
+  background: var(--primary-bg);
+  color: var(--primary-text);
 }
 .button[data-variant="primary"]:hover {
-  background: #29343a;
-  color: var(--canvas);
+  background: var(--primary-bg-hover);
+  color: var(--primary-text);
 }
 .button[data-variant="danger"] {
   color: var(--danger);
