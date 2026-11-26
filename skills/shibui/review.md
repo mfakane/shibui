@@ -22,7 +22,7 @@
 - [ ] Borders and radii follow the selected profile; status dots and section rules are opt-in.
 - [ ] Status is text-first; tags and icons are functional.
 - [ ] Helper text adds non-obvious information.
-- [ ] Focus is visible and meaning does not depend on color.
+- [ ] Focus is visible and meaning does not depend on color. For the standard profile, check text, controls, and their states in both light and dark appearances.
 - [ ] Semantics, labels, keyboard flow, responsive behavior, and reduced motion work.
 
 ## Finding format

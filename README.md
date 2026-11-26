@@ -8,6 +8,10 @@ Shibui is a framework-independent design system for quiet, structured interfaces
 
 ![Shibui visual reference: typography, buttons, focus, inputs, content-length dividers, and role-dependent spacing](assets/shibui-overview.svg)
 
+The README images are fixed light-theme specimens with their own canvas, so
+they stay readable on either GitHub theme. The live reference pages show both
+appearances.
+
 ## Start here
 
 - Read the [principles](docs/principles.md) before designing a view.
@@ -64,7 +68,9 @@ No build step or frontend dependency is required. Serve the repository with any 
 
 ## Browser support
 
-The reference CSS targets current evergreen browsers. It respects reduced-motion preferences and uses native HTML controls wherever possible.
+The reference CSS targets current evergreen browsers. It follows the system light/dark preference and respects reduced motion.
+To force one appearance, set `data-theme="light"` or `data-theme="dark"` on
+`<html>`. See the [standard style](docs/style.md#light-and-dark-appearance).
 
 ## Source formatting
 

@@ -79,7 +79,7 @@ input,
 select,
 textarea {
   width: 100%;
-  border: 1px solid #aeb7b2;
+  border: 1px solid var(--input-line);
   border-radius: var(--radius-small);
   background: var(--canvas);
   padding: 0.65rem 0.75rem;
